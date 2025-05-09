@@ -1,0 +1,190 @@
+@use '../../../../style/variables.scss' as var;
+@use '../../../../style/mixins/btns/blueBtn/wthout__bc.scss'as blue__btn;
+@use '../../../../style/mixins/btns/animations/underLinkBtnAnim.scss'as btnAnimations;
+@use '../../../../style/mixins/text/text.scss'as textMixin;
+
+#examples__catalog__section {
+    position: relative;
+    @include textMixin.text;
+
+    @media (min-width:1025px) {
+        @include btnAnimations.underLinkBtnAnim;
+        margin-top: 550px;
+    }
+
+    @media (max-width:1024px) {
+        margin-top: 176px;
+    }
+
+    .section__text__content {
+        .section__title {
+            display: flex;
+            flex-direction: column;
+            z-index: -1;
+        }
+
+        .section__description {
+            background-color: white;
+            z-index: 2;
+
+            @media (min-width:1025px) {
+                width: 1070px;
+            }
+
+            @media (max-width:1024px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .swiper__container {
+        @media (min-width:1025px) {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        @media (max-width:1024px) {
+            position: relative;
+
+            .blue__btn__container {
+                position: relative;
+                top:100px;
+                width: 100%;
+                display: flex;
+                justify-content: center;text-decoration: none;
+
+                .blue__btn.adaptive {
+                    position: relative;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 15.4px;
+                    color:var.$primary__blue__btn__clr;
+                    border:1px solid var.$primary__blue__btn__clr;
+                    border-radius: 12px;
+                    padding:12px 16px 12px 16px;
+                    background:none;
+                    outline: none;
+                }
+            }
+        }
+
+        .swiper__wrapper {
+            position: relative;
+            top: 66px;
+
+            .example__card {
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all .4s;
+                cursor: grab;
+
+                @media (min-width:1025px) {
+                    width: 496px;
+                    height: 268px;
+                    border-radius: 48px;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        background: rgba(255, 255, 255, .6); // Белый фон с прозрачностью
+                        backdrop-filter: blur(10px);
+                        opacity: 0; // Скрываем по умолчанию
+                        transition: opacity .4s;
+                        z-index: 1; // Поднимаем выше изображения
+                    }
+
+                    &:hover {
+                        &::before {
+                            opacity: 1;
+                        }
+
+                        .blue__btn {
+                            opacity: 1;
+                        }
+
+                        .example__image {
+                            filter: blur(30px)
+                        }
+                    }
+
+                    .blue__btn {
+                        position: relative;
+                        @include blue__btn.blue__btn__without__bc;
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 26.4px;
+                        width: 275px;
+                        height: 64px;
+                        border-radius: 20px;
+                        background: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        text-decoration: none;
+                        opacity: 0;
+                        transition: opacity .4s;
+                        z-index: 2;
+
+
+                        .btn__link__svg {
+                            position: absolute;
+                            top: 16px;
+                            right: -45px;
+                            margin-right: 25px;
+                            height: 13px;
+                            z-index: 52;
+                        }
+
+                        &::before {
+                            padding-top: 16px;
+                            content: 'Открыть каталог';
+                            border-radius: 20px;
+                            padding-right: 15px;
+                        }
+
+                        &.animate__bc::before {
+                            background: rgb(0, 96, 240, 10%);
+                        }
+
+                        &.animate__bc__to__default::before {
+                            background: rgb(0, 96, 240, 60%);
+                        }
+
+                    }
+                }
+
+                @media (max-width:1024px) {
+                    width: 342px;
+                    height: 222px;
+                    border-radius: 36px;
+
+                    .blue__btn {
+                        display: none;
+                    }
+                }
+
+                .example__image {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: -1;
+                    transition: filter .7s;
+                }
+            }
+        }
+    }
+}

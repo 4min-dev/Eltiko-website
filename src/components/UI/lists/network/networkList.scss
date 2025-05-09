@@ -1,0 +1,14 @@
+.network__container {
+    position: relative;
+
+    .network__card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: black;
+
+        @media (min-width:1025px) {
+            text-underline-offset: 5px;
+        }
+    }
+}

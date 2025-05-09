@@ -1,0 +1,106 @@
+@use '../../../style/variables.scss'as var;
+@use '../../../style/mixins/btns/blueBtn/wthout__bc'as blue__btn;
+
+header {
+    position: fixed;
+    top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 700;
+
+    @media (min-width:1025px) {
+        left: 96px;
+        right: 96px;
+    }
+
+    @media (max-width:1024px) {
+        left: 16px;
+        right: 16px;
+    }
+
+    .header__logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        &.white {
+            background:rgba(255, 255, 255, 0.3);
+
+            .header__logo__title {
+                background: rgba(253, 255, 253, 1);
+                backdrop-filter: blur(4px);
+                color:var.$primary__blue__btn__clr
+            }
+        }
+
+        &.blue {
+            background: rgba(0, 98, 240, 0.3);
+            color:var.$primary__blue__btn__clr;
+
+            .header__logo__title {
+                background: rgba(0, 98, 240, 1);
+                backdrop-filter: blur(4px);
+                color:white;
+            }
+        }
+
+        @media (min-width:1025px) {
+            padding: 4px 15px 4px 4px;
+            border-radius: 16px;
+            color: var.$primary__blue__btn__clr;
+            font-size: 19px;
+        }
+
+        @media (max-width:1024px) {
+            background: rgba(255, 255, 255, 30%);
+            padding: 2px 8px 2px 2px;
+            border-radius: 10px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .header__logo__title {
+            text-align: center;
+            font-weight: 700;
+            margin-right: 6px;
+            width: 90px;
+            width: fit-content;
+
+            @media (min-width:1025px) {
+                background: var.$primary__blue__btn__clr;
+                border-radius: 12px;
+                padding: 12px 11px 12px 11px;
+                color: white;
+                font-size: 19px;
+            }
+
+            @media (max-width:1024px) {
+                background: white;
+                border-radius: 8px;
+                padding: 9px 6px 9px 6px;
+                color: var.$primary__blue__btn__clr;
+                font-size: 12px;
+                background-color: white;
+                width: fit-content;
+            }
+        }
+    }
+
+    .blue__btn {
+        @include blue__btn.blue__btn__without__bc;
+        padding: 14px 27px 14px 27px;
+        border-radius: 17px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 22px;
+
+        @media (min-width:1025px) {
+            display: initial;
+        }
+
+        @media (max-width:1024px) {
+            display: none;
+        }
+    }
+}

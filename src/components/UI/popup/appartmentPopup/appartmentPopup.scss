@@ -1,0 +1,691 @@
+@use '../../../../style/variables.scss'as var;
+@use '../../../../style/mixins/btns/blueBtn/with__bc'as blue__btn;
+@use '../../../../style/mixins/btns/animations/underBtnAnim.scss'as btnAnimations;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.house__popup__container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 800;
+    background: white;
+    transition: opacity .7s;
+    opacity: 0;
+
+    @media (min-width:1025px) {
+        padding-left: 96px;
+        padding-right: 96px;
+        padding-bottom: 194px;
+    }
+
+    @media (max-width:1024px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+
+    &.not-closing {
+        opacity: 1;
+        animation: fadeIn 0.7s forwards;
+    }
+
+    &.closing {
+        opacity: 0;
+        animation: fadeOut .7s forwards;
+    }
+
+    .house__popup__close__btn {
+        position: absolute;
+        border-radius: 1263px;
+        background: #00000033;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        @media (min-width:1025px) {
+            right: 96px;
+            top: 40px;
+            width: 48px;
+            height: 48px;
+        }
+
+        @media (max-width:1024px) {
+            right: 24px;
+            top: 24px;
+            width: 36px;
+            height: 36px;
+        }
+
+        svg path {
+            fill: #606060;
+            stroke: #606060;
+            cursor: pointer;
+        }
+    }
+
+    .house__popup__card__block {
+        position: relative;
+
+        @media (min-width:1025px) {
+            margin-top: 153px;
+        }
+
+        @media (max-width:1024px) {
+            margin-top: 81px;
+        }
+
+        .house__popup__card__about__card {
+            position: relative;
+            display: flex;
+
+            @media (min-width:1025px) {
+                justify-content: space-between;
+                gap: 48px;
+            }
+
+            @media (max-width:1024px) {
+                flex-direction: column-reverse;
+                row-gap: 32px;
+            }
+
+            .house__description__container {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .house__text__content {
+                display: flex;
+                flex-direction: column;
+
+                @media (min-width:1025px) {
+                    row-gap: 22px;
+                }
+
+                @media (max-width:1024px) {
+                    .house__tags {
+                        order: 2;
+                        display: flex;
+                        margin-top: 28px;
+                        align-items: center;
+
+                        .house__tag {
+                            width: fit-content;
+                            height: fit-content;
+                        }
+                    }
+                }
+
+                .house__name {
+                    font-weight: 700;
+                    color: black;
+                    order: 1;
+
+                    @media (min-width:1025px) {
+                        font-size: 66px;
+                        line-height: 72.6px;
+                    }
+
+                    @media (max-width:1024px) {
+                        font-size: 28px;
+                        line-height: 30.8px;
+                    }
+                }
+
+                .house__description {
+                    font-weight: 500;
+                    color: #38373B;
+                    order: 3;
+                    ;
+
+                    @media (min-width:1025px) {
+                        font-size: 22px;
+                        line-height: 35.2px;
+                        width: 40vw;
+                    }
+
+                    @media (max-width:1024px) {
+                        font-size: 14px;
+                        line-height: 22.4px;
+                    }
+                }
+            }
+
+            .house__tags {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                @media (min-width:1025px) {
+                    gap: 28px;
+                    margin-top: 68px;
+                }
+
+                @media (max-width:1024px) {
+                    gap: 8px;
+                    margin-bottom: 8px;
+                }
+
+                .house__tag {
+                    border: 2px solid #0062F0;
+                    color: #0062F0;
+                    font-weight: 500;
+                    letter-spacing: -0.02em;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    border-radius: 119px;
+                    order: -1;
+
+                    @media (min-width:1025px) {
+                        padding: 8px 20px 8px 16px;
+                        font-size: 22px;
+                        line-height: 24.2px;
+                    }
+
+                    @media (max-width:1024px) {
+                        padding: 6px 12px 6px 18px;
+                        font-size: 14px;
+                        line-height: 15.4px;
+                    }
+
+                    svg path {
+                        stroke: #0062F0
+                    }
+                }
+            }
+
+            .house__card__container {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .house__card {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+
+                    @media (min-width:1025px) {
+                        width: 40vw;
+                        height: 600px;
+                        border-radius: 56px;
+
+                        &:hover {
+                            .house__communicate__btn {
+                                opacity: 1;
+                            }
+                        }
+
+                        .house__communicate__btn {
+                            position: relative;
+                            background: #FDFFFD33;
+                            backdrop-filter: blur(6px);
+                            border-radius: 20px;
+                            padding: 20px 50px 20px 50px;
+                            font-size: 26px;
+                            color: white;
+                            width: fit-content;
+                            height: fit-content;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                            overflow: hidden;
+                            opacity: 0;
+                            transition: opacity .7s;
+                            z-index: 5;
+
+                            .btn__text {
+                                transition: all .7s;
+                            }
+
+
+                            @media(min-width:1025px) {
+                                &::before {
+                                    position: absolute;
+                                    content: 'Связаться';
+                                    background: white;
+                                    color: var.$primary__blue__btn__clr;
+                                    display: flex;
+                                    padding-top: 20px;
+                                    justify-content: center;
+                                    top: 75px;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0px;
+                                    transition: all .7s;
+                                }
+
+                                &:hover {
+                                    .btn__text {
+                                        transform: translateY(-110px);
+                                    }
+
+                                    &::before {
+                                        top: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @media (max-width:1024px) {
+                        width: 100%;
+                        height: 450px;
+                        border-radius: 28px;
+
+                        .house__communicate__btn {
+                            display: none;
+                        }
+                    }
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        filter: brightness(0.7);
+                        transition: opacity 1s ease;
+                        opacity: 0.5;
+                        z-index: -1;
+
+                        &.active {
+                            opacity: 1;
+                            z-index: 1;
+                        }
+                    }
+                }
+
+                .house__card__pagination__container {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    @media (min-width:1025px) {
+                        margin-top: 28px;
+                    }
+
+                    @media (max-width:1024px) {
+                        margin-top: 16px;
+                    }
+
+                    .house__card__indicator__wrapper {
+                        width: 50%;
+                        background: #F6F6F6;
+                        backdrop-filter: blur(8px);
+                        border-radius: 24px;
+
+                        @media (min-width:1025px) {
+                            height: 36px;
+                        }
+
+                        @media (max-width:1024px) {
+                            height: 26px;
+                        }
+
+                        .house__card__indicator {
+                            height: 100%;
+                            background: #0062F0;
+                            border-radius: 24px;
+                            transition: width .7s;
+                        }
+                    }
+
+                    .pagination__btns__container {
+                        display: flex;
+
+                        @media (min-width:1025px) {
+                            gap: 8px;
+                        }
+
+                        @media (max-width:1024px) {
+                            gap: 4px;
+                        }
+
+                        button {
+                            background: rgba(246, 246, 246, 1);
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                            transition: background-color 0.7s ease;
+
+                            @media (min-width:1025px) {
+                                padding: 8px 24px;
+                                border-radius: 20px;
+                            }
+
+                            @media (max-width:1024px) {
+                                padding: 5.33px 16px 5.33px 16px;
+                                border-radius: 13.33px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .contacts__container {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: end;
+
+            @media (min-width:1025px) {
+                gap: 8px;
+            }
+
+            @media (max-width:1024px) {
+                gap: 4px;
+                margin-top: 36px;
+            }
+
+            .blue__btn {
+                position: relative;
+                font-weight: 500;
+                overflow: hidden;
+                border: none;
+                outline: none;
+                transition: background 1s;
+                cursor: pointer;
+
+                @media (min-width:1025px) {
+                    font-size: 24px;
+                    line-height: 26.4px;
+                    padding: 19px 25px 19px 25px;
+                    border-radius: 20px;
+
+                    &:hover {
+                        .btn__text__before {
+                            top: 0;
+                        }
+
+                        .btn__text {
+                            top: -50px;
+                        }
+
+                        &:nth-child(2) {
+                            &::before {
+                                top: -50px;
+                                background: rgba(0, 98, 240, 0.2)
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width:1024px) {
+                    font-size: 14px;
+                    line-height: 15.4px;
+                    padding: 16.5px 48px 16.5px 48px;
+                    border-radius: 16px;
+
+                    .btn__text__before {
+                        display: none;
+                    }
+                }
+
+                .btn__text {
+                    position: relative;
+                    top: 0;
+                    transition: all .7s;
+                }
+
+                &:nth-child(1) {
+                    @include blue__btn.with__bc;
+
+                    @media (min-width:1025px) {
+                        &:hover {
+                            background: rgba(0, 98, 240, 0.2);
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    background: white;
+                    border: 1px solid var.$primary__blue__btn__clr;
+                    color: var.$primary__blue__btn__clr;
+
+                    @media (min-width:1025px) {
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            background-color: rgb(255, 255, 255);
+                            transition: background .7s;
+                        }
+                    }
+                }
+
+                @media(min-width:1025px) {
+                    .btn__text__before {
+                        position: absolute;
+                        background: white;
+                        color: var.$primary__blue__btn__clr;
+                        display: flex;
+                        padding-top: 20px;
+                        justify-content: center;
+                        bottom: 0;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        transition: all .7s;
+                    }
+                }
+            }
+        }
+    }
+
+    .house__recommendation__block {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width:1025px) {
+            padding-top: 50px;
+            border-top: 2px solid #D0D6DD;
+            margin-top: 96px;
+        }
+
+        @media (max-width:1024px) {
+            margin-top: 72px;
+            padding-top: 72px;
+            border-top: 1px solid #D0D6DD;
+        }
+
+        .block__title {
+            font-weight: 600;
+            color: black;
+
+            @media (min-width:1025px) {
+                font-size: 32px;
+                line-height: 35.2px;
+            }
+
+            @media (max-width:1024px) {
+                font-size: 28px;
+                line-height: 30.8px;
+            }
+        }
+
+        .recommendation__cards__container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @media (min-width:1025px) {
+                margin-top: 32px;
+                gap: 42px;
+            }
+
+            @media (max-width:1024px) {
+                margin-top: 28px;
+                row-gap: 40px;
+            }
+
+            .recommendation__card {
+                position: relative;
+                display: flex;
+
+                @media (min-width:1025px) {
+                    width: 45%;
+                    height: 200px;
+                }
+
+                @media (max-width:1024px) {
+                    width: 100%;
+                    height: 337px;
+                    flex-direction: column;
+                }
+
+                img {
+                    position: absolute;
+                    border-radius: 27px;
+                    background: #B8B8B8;
+
+                    @media (min-width:1025px) {
+                        width: 200px;
+                        height: 200px;
+                    }
+
+                    @media (max-width:1024px) {
+                        width: 100%;
+                        height: 188px;
+                        object-fit: cover;
+                    }
+
+                }
+
+                .recommendation__card__content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    @media (min-width:1025px) {
+                        margin-left: 224px;
+                    }
+
+                    @media (max-width:1024px) {
+                        margin-top: 200px;
+                    }
+
+                    .recommendation__card__title__container {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        .recommendation__card__title {
+                            font-weight: 600;
+                            letter-spacing: -0.01em;
+                            color: #242424;
+
+                            @media (min-width:1025px) {
+                                font-size: 34px;
+                                line-height: 40.8px;
+                                margin-bottom: 4px;
+                            }
+
+                            @media (max-width:1024px) {
+                                font-size: 22px;
+                                line-height: 26.4px;
+                                margin-bottom: 8px;
+                            }
+                        }
+
+                        .recommendation__card__type {
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 17.6px;
+                            letter-spacing: -0.02em;
+                            color: #0062F0;
+                            padding: 5px 10.5px 5px 10.5px;
+                            border-radius: 880px;
+                            background: #0062F01A;
+                            width: fit-content;
+                            height: fit-content;
+
+                            @media (max-width:1024px) {
+                                display: none;
+                            }
+                        }
+
+                        .recommendation__card__description {
+                            font-weight: 500;
+                            letter-spacing: -0.02em;
+                            color: #38373B;
+
+                            @media (min-width:1025px) {
+                                font-size: 20px;
+                                line-height: 30px;
+                            }
+
+                            @media (max-width:1024px) {
+                                font-size: 14px;
+                                line-height: 21px;
+                            }
+                        }
+                    }
+
+                    .recommendation__card__tags {
+                        display: flex;
+                        align-items: center;
+
+                        @media (min-width:1025px) {
+                            gap: 21.12px;
+                        }
+
+                        @media (max-width:1024px) {
+                            gap: 17px;
+                            margin-top: 16px;
+                        }
+
+                        .recommendation__card__tag {
+                            display: flex;
+                            align-items: center;
+                            gap: 6.50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

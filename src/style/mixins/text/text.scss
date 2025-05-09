@@ -1,0 +1,14 @@
+@mixin text {
+    .aqua__text {
+        border-radius: 119px;
+        background: #0062F01A;
+        color: #0062F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gray__text {
+        color: #8EA0B2;
+    }
+}

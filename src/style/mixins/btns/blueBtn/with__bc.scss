@@ -1,0 +1,10 @@
+@use './blueBtn.scss' as defaultBlueBtn;
+@use '../../../variables.scss' as vars;
+
+@mixin with__bc {
+    @include defaultBlueBtn.blue__btn;
+    color:white;
+    background:vars.$primary__blue__btn__clr;
+    border:none;
+    outline:none;
+}

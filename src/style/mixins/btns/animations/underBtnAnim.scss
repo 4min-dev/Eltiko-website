@@ -1,0 +1,33 @@
+@mixin underBtnAnim {
+    .anim__btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.7s;
+
+        .btn__text {
+            position: relative;
+            transition: all .7s;
+            display: inline-block;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            top:200%;
+            left: 0;
+            right: 0;
+            bottom: -100px;
+            transition: all .7s;
+        }
+
+        &:hover {
+            &::before {
+                top:0;
+            }
+
+            .btn__text {
+                transform: translateY(-110px);
+            }
+        }
+    }
+}

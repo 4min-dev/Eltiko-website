@@ -1,0 +1,44 @@
+@mixin underLinkBtnAnim {
+    .anim__btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s;
+
+        .btn__text, .btn__link__svg {
+            position: relative;
+            display: inline-block;
+        }
+
+        .btn__text {
+            transition: all .7s;
+        }
+
+        .btn__link__svg {
+            transition: all .7s;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            top:100%;
+            left: 0;
+            right: 0;
+            bottom: 0px;
+            transition: all .7s;
+        }
+
+        &:hover {
+            &::before {
+                top:0;
+            }
+
+            .btn__text {
+                transform: translateY(-110px);
+            }
+
+            .btn__link__svg {
+                right:5px !important;
+            }
+        }
+    }
+}

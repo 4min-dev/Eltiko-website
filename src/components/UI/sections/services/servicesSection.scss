@@ -1,0 +1,167 @@
+#services__section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+
+    @media (min-width:1025px) {
+        top: 380px;
+    }
+
+    @media (max-width:1024px) {
+        flex-direction: column;
+        top: 180px;
+        overflow: hidden;
+    }
+
+    .section__text__content {
+        .section__title {
+            z-index: 2;
+            background: white;
+
+            &::after {
+                position: relative;
+                content: 'Риэлтора';
+                font-weight: 500;
+                color: #0062F0;
+                border: 1px solid #0062F0;
+                border-radius: 1000px;
+                letter-spacing: -0.02em;
+
+                @media (min-width:1025px) {
+                    font-size: 24px;
+                    line-height: 26.4px;
+                    padding: 9px 16px 9px 16px;
+                    margin-left: 16px;
+                    bottom: 9px;
+                }
+
+                @media (max-width:1024px) {
+                    font-size: 13px;
+                    line-height: 14.3px;
+                    padding: 8px 12px 8px 12px;
+                    margin-left: 8px;
+                    bottom: 0px;
+                }
+            }
+        }
+
+        .section__description {
+            @media (min-width:1025px) {
+                width: 708px;
+            }
+
+            @media (max-width:1024px) {
+                margin-top: -1px;;
+                padding-top: 16px;
+                width: 100%;
+                z-index: 1;
+                background-color: white;
+            }
+        }
+    }
+
+    .service__cards__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        @media (min-width:1025px) {
+            gap: 16px;
+        }
+
+        @media (max-width:1024px) {
+            gap: 8px;
+            margin-top: 160px;
+        }
+
+        .service__card {
+            position: relative;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            display: flex;
+            justify-content: space-between;
+            transition: all 1s;
+            text-decoration: none;
+
+            @media (min-width:1025px) {
+                width: 492px;
+                min-height: 120px;
+                max-height: fit-content;
+                padding: 24px;
+                border-radius: 32px;
+                font-size: 25px;
+                line-height: 35px;
+            }
+
+            @media (max-width:1024px) {
+                width: 100%;
+                min-height: 82px;
+                max-height: fit-content;
+                padding: 16px;
+                border-radius: 18px;
+                font-size: 18px;
+                line-height: 25.2px;
+            }
+
+            .service__svg__container {
+                @media (min-width:1025px) {
+                    padding: 5px 13px;
+                }
+
+                @media (max-width:1024px) {
+                    padding: 5px 10px;
+                    border-radius: 0px;
+
+                    svg {
+                        width: 12px;
+                        height: 12px
+                    }
+                }
+            }
+
+            &.not-active {
+                border: 1px solid #0062F0;
+                opacity: 30%;
+                color: #0062F0;
+
+                .service__svg__container {
+                    border: 1.5px solid #0062F0;
+
+                    @media (min-width:1025px) {
+                        border-radius: 16px;
+                    }
+
+                    @media (max-width:1024px) {
+                        border-radius: 10px;
+                    }
+                }
+
+                svg path {
+                    stroke: #0062F0;
+                }
+            }
+
+            &.active {
+                background: #0062F0;
+                color: white;
+
+                svg path {
+                    stroke: white;
+                }
+            }
+
+            .service__card__about__text {
+                display: flex;
+                flex-direction: column;
+
+                .service__title {
+                    &::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}

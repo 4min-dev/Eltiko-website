@@ -1,0 +1,18 @@
+@use '../../../../style/mixins/sections/section.scss'as section__mixin;
+@include section__mixin.section__global__mixin;
+
+.home__page {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+
+    footer {
+        @media (min-width:1025px) {
+             margin-top: 1200px;
+        }
+
+        @media (max-width:1024px) {
+            margin-top: 350px;
+       }
+    }
+}

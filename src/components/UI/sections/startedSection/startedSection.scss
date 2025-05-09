@@ -1,0 +1,280 @@
+@use '../../../../style/variables.scss'as var;
+@use '../../../../style/mixins/btns/blueBtn/with__bc'as blue__btn;
+@use '../../../../style/mixins/btns/animations/underBtnAnim.scss'as btnAnimations;
+
+#started__section__main__page {
+    position: relative;
+    color: white;
+    height: 100vh;
+
+    @media(min-width:1025px) {
+        @include btnAnimations.underBtnAnim;
+    }
+
+    @media (min-width:1025px) {
+        padding-right: 96px;
+        padding-left: 96px;
+    }
+
+    @media (max-width:1024px) {
+        padding-left: 24px;
+    }
+
+    .started__section__background {
+        img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    }
+
+    .author__about__content {
+        position: relative;
+        width: 100%;
+        top: 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: -1;
+        gap: 14px;
+
+        .author__text__content {
+            position: relative;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 22px;
+            max-width: 175px;
+            word-wrap: break-word;
+            text-align: right;
+
+            &::before {
+                content: '';
+                width: 86px;
+                height: 1px;
+                margin-bottom: 5px;
+                margin-right: 8px;
+                display: inline-block;
+                background: #FDFFFD;
+            }
+        }
+
+        .author__name {
+            font-size: 27px;
+            font-weight: 600;
+            line-height: 29.7px;
+        }
+
+        .author__description {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 22px;
+            color: #CAD7E5;
+        }
+    }
+
+    .started__section__landing_container {
+        position: relative;
+        top: 195px;
+
+        .section__title {
+            position: relative;
+            font-size: 72px;
+            font-weight: 600;
+            line-height: 79.2px;
+            letter-spacing: 2px;
+            display: flex;
+            flex-direction: column;
+
+            .first__text__block {
+                &::after {
+                    content: '';
+                    width: 224px;
+                    height: 14px;
+                    margin-bottom: 10px;
+                    margin-left: 24px;
+                    display: inline-block;
+                    border-radius: 16px;
+                    background: #FDFFFD4D;
+                }
+            }
+
+            .second__text__block {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    width: 155px;
+                    height: 14px;
+                    margin-bottom: 10px;
+                    margin-right: 32px;
+                    border-radius: 16px;
+                    background: #FDFFFD4D;
+                    display: inline-block;
+                }
+            }
+        }
+
+        .section__description {
+            font-size: 27px;
+            line-height: 29.7px;
+            margin-top: 12px;
+            font-weight: 300;
+
+        }
+    }
+
+    .landing__btns__container {
+        position: relative;
+        top: 64px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .blue__btn {
+            @include blue__btn.with__bc;
+
+            @media(min-width:1025px) {
+                &::before {
+                    content: 'Оставить заявку';
+                    background: white;
+                    color: var.$primary__blue__btn__clr;
+                    display: flex;
+                    padding-top: 20px;
+                    border-radius:20px;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .blue__btn,
+        .opacity__btn {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 26.4px;
+            padding: 19px 42px 19px 42px;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .opacity__btn {
+            position: relative;
+            display: inline-block;
+            background: #FDFFFD4D;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+
+            @media(min-width:1025px) {
+                &::before {
+                    content: 'Открыть каталог';
+                    background: white;
+                    color: var.$primary__blue__btn__clr;
+                    display: flex;
+                    padding-top: 20px;
+                    border-radius:20px;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    @media (max-width:1024px) {
+        .author__about__content {
+            gap: 6px;
+            height: fit-content;
+            top: 45px;
+            right: 16px;
+
+            .author__image {
+                width: 49px;
+                height: 27px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .author__text__content {
+                display: none;
+            }
+
+            .author__name {
+                font-size: 14px;
+                line-height: 15.4px;
+            }
+
+            .author__description {
+                font-size: 10px;
+                line-height: 11px;
+                text-align: left;
+                color: #CAD7E5;
+            }
+        }
+
+        .started__section__landing_container {
+            top: 146px;
+
+            .section__title {
+                font-size: 28px;
+                line-height: 30.8px;
+
+                .first__text__block {
+                    &::after {
+                        content: '';
+                        width: 25%;
+                        height: 8px;
+                        margin-left: 9px;
+                        margin-bottom: 3px;
+                    }
+                }
+
+                .second__text__block {
+                    &::before {
+                        content: '';
+                        width: 47px;
+                        height: 7px;
+                        margin-right: 7px;
+                        margin-bottom: 3px;
+                    }
+                }
+            }
+
+            .section__description {
+                font-size: 14px;
+                line-height: 19.6px;
+            }
+        }
+
+        .landing__btns__container {
+            position: relative;
+            top: 64px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .blue__btn {
+                padding: 16.5px 21.5px 16.5px 21.5px;
+                width: 153px;
+                height: 48px;
+            }
+
+            .opacity__btn {
+                padding: 16.5px 20px 16.5px 20px;
+                width: 94px;
+                height: 48px;
+            }
+
+            .blue__btn,
+            .opacity__btn {
+                font-size: 14px;
+                line-height: 15.4px;
+            }
+        }
+    }
+}

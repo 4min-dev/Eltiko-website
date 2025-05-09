@@ -1,0 +1,241 @@
+@use '../../../../style/mixins/text/text.scss' as textGlobalMixin;
+
+#about__section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: white;
+    z-index: 3;
+
+    @include textGlobalMixin.text;
+
+    @media (min-width:1025px) {
+        top: 140px;
+    }
+
+    @media (max-width:1024px) {
+        flex-direction: column;
+        top: 72px;
+    }
+
+    .section__text__content {
+        .section__description {
+            @media (min-width:1025px) {
+                width: 708px;
+            }
+
+            @media (max-width:1024px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .about__section__aside__panel {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width:1025px) {
+            gap: 12px;
+        }
+
+        @media (max-width:1024px) {
+            gap: 8px;
+            margin-top: 32px;
+        }
+
+        .gray__block {
+            border-radius: 32px;
+            border: 1px solid #CDD4DB;
+
+            @media (min-width:1025px) {
+                padding: 24px;
+            }
+
+            @media (max-width:1024px) {
+                padding: 17px;
+            }
+        }
+
+        .about__aside__first__block {
+            display: flex;
+            flex-direction: column;
+
+            .gray__text {
+                font-weight: 500;
+
+                @media (min-width:1025px) {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+
+                @media (max-width:1024px) {
+                    font-size: 14.81px;
+                    line-height: 19.25px;
+                }
+            }
+
+            .transactions__amount__container {
+                display: flex;
+                align-items: center;
+
+                .block__title {
+                    font-weight: 600;
+                    color: black;
+
+                    @media (min-width:1025px) {
+                        font-size: 60px;
+                        line-height: 72px;
+                    }
+
+                    @media (max-width:1024px) {
+                        font-size: 44.42px;
+                        line-height: 53.3px;
+                    }
+                }
+
+                .aqua__text {
+                    font-weight: 500;
+
+                    @media (min-width:1025px) {
+                        padding: 11px 23px 11px 23px;
+                        margin-left: 16px;
+                        font-size: 22px;
+                        line-height: 33px;
+                    }
+
+                    @media (max-width:1024px) {
+                        padding: 9px 16px 9px 16px;
+                        margin-left: 11.84px;
+                        font-size: 16.29px;
+                        line-height: 24.43px;
+                    }
+                }
+            }
+        }
+
+        .about__aside__second__block {
+            max-height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap:20px;
+
+            @media (min-width:1025px) {
+                min-height: 348px;
+            }
+
+            @media (max-width:1024px) {
+                min-height: 255px;
+            }
+
+            .about__aside__country__card {
+                position: relative;
+                height: fit-content;
+                border-radius: 1000px;
+                display: flex;
+                align-items: center;
+                background: #F6F6F6;
+                padding: 4px 8px 4px 4px;
+
+                @media (min-width:1025px) {
+                    width: 284px;
+                }
+
+                @media (max-width:1024px) {
+                    width: 210px;
+                }
+
+                img {
+                    border-radius: 49px;
+
+                    @media (min-width:1025px) {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    @media (max-width:1024px) {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                .country__name {
+                    font-weight: 600;
+                    color: black;
+
+                    @media (min-width:1025px) {
+                        font-size: 22px;
+                        line-height: 33px;
+                        margin-left: 6.13px;
+                    }
+
+                    @media (max-width:1024px) {
+                        font-size: 16.29px;
+                        line-height: 24.43px;
+                        margin-left: 4.54px;
+                    }
+                }
+
+                .aqua__text {
+                    position: absolute;
+
+                    @media (min-width:1025px) {
+                        right: 9px;
+                        padding: 9.21px 12.77px 9.21px 12.77px;
+                        font-size: 13.54px;
+                        line-height: 14.89px;
+                    }
+
+                    @media (max-width:1024px) {
+                        right: 6.57px;
+                        padding: 6.91px 9.58px 6.91px 9.58px;
+                        font-size: 10.02px;
+                        line-height: 11.02px;
+                    }
+                }
+
+                &#country__card__1 {
+                    rotate: -6deg;
+                }
+
+                &#country__card__2 {
+                    rotate: 6deg;
+
+                    @media (min-width:1025px) {
+                        left: 113px;
+                    }
+
+                    @media (max-width:1024px) {
+                        left: 84.24px;
+                    }
+                }
+
+                &#country__card__3 {
+                    rotate: -6deg;
+
+                    @media (min-width:1025px) {
+                        left: 8px;
+                    }
+
+                    @media (max-width:1024px) {
+                        left: 6px;
+                    }
+                }
+
+                &#country__card__4 {
+                    rotate: 6deg;
+
+                    @media (min-width:1025px) {
+                        left: 117px;
+                    }
+
+                    @media (max-width:1024px) {
+                        left: 86.99px;
+                    }
+                }
+            }
+        }
+    }
+}

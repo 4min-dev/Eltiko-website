@@ -1,0 +1,179 @@
+@use '../../../../style/mixins/text/text.scss'as textMixin;
+
+#feedback__section {
+    position: relative;
+    background-color: white;
+    height: 100vh;
+    z-index: 2;
+    top:200px;
+
+    @include textMixin.text;
+
+    .section__text__content {
+        .section__description {
+            @media (min-width:1025px) {
+                width: 50vw;
+                line-height: 41.6px !important;
+            }
+
+            @media (max-width:1024px) {
+                width: 100%;
+                line-height: 25.6px !important;
+            }
+        }
+    }
+
+    .feedback__cards__container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+
+        @media (min-width:1025px) {
+            margin-top: 77px;
+        }
+
+        @media (max-width:1024px) {
+            margin-top: 40px;
+        }
+
+        .feedback__cards__wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap:24px;
+            width: 400vw;
+
+            @media (min-width:1025px) {
+                &:nth-child(2) {
+                    margin-top: 34px;
+                }
+            }
+
+            @media (max-width:1024px) {
+                &:nth-child(2) {
+                    margin-top: 16px;
+                }
+            }
+
+            &.to__right {
+                @media (min-width:1025px) {
+                    right: calc(300vw);
+                }
+
+                @media (max-width:1024px) {
+                    right: calc(300vw * 3);
+                }
+            }
+
+
+            .feedback__card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                height: fit-content;
+                background: rgba(250, 249, 251, 1);
+                flex-shrink: 0;
+
+                @media (min-width:1025px) {
+                    padding: 32px;
+                    border-radius: 48px;
+                    width: 693px;
+                }
+
+                @media (max-width:1024px) {
+                    padding: 24px;
+                    border-radius: 28px;
+                    width: 342px;
+                }
+
+                .feedback__title {
+                    font-weight: 400;
+
+                    @media (min-width:1025px) {
+                        font-size: 23px;
+                        line-height: 36.8px;
+                    }
+
+                    @media (max-width:1024px) {
+                        font-size: 13px;
+                        line-height: 20.8px;
+                    }
+                }
+
+                .feedback__author {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin-top: 36px;
+
+                    .feedback__author__personal {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0px;
+
+                        .feedback__author__name {
+                            font-weight: 500;
+                            color: black;
+
+                            @media (min-width:1025px) {
+                                font-size: 29px;
+                            }
+
+                            @media (max-width:1024px) {
+                                font-size: 18px;
+                            }
+                        }
+
+                        .feedback__author__company {
+                            font-weight: 400;
+
+                            @media (min-width:1025px) {
+                                font-size: 19px;
+                            }
+
+                            @media (max-width:1024px) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    .feedback__author__avatar {
+                        position: relative;
+                        background: rgba(142, 160, 178, 0.1);
+                        border-radius: 1000px;
+                        width: auto;
+                        display: flex;
+                        justify-content: center;
+                        overflow: hidden;
+
+                        @media (min-width:1025px) {
+                            padding: 0px 27px 0px 27px;
+                            height: 64px;
+                        }
+
+                        @media (max-width:1024px) {
+                            padding: 2px 15px 0px 4px;
+                            height: 30px;
+                        }
+
+                        img {
+                            position: relative;
+
+                            @media (min-width:1025px) {
+                                width: 94px;
+                                height: 112px;
+                            }
+
+                            @media (max-width:1024px) {
+                                width: 44px;
+                                height: 55px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

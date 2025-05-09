@@ -1,0 +1,48 @@
+@mixin section__global__mixin {
+    section {
+        .section__text__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width:1025px) {
+            padding-right: 96px;
+            padding-left: 96px;
+        }
+
+        @media (max-width:1024px) {
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+
+        .section__title {
+            font-weight: 600;
+
+            @media (min-width:1025px) {
+                font-size: 56px;
+                line-height: 61.6px;
+            }
+
+            @media (max-width:1024px) {
+                font-size: 32px;
+                line-height: 35.2px;
+            }
+        }
+
+        .section__description {
+            font-weight: 500;
+
+            @media (min-width:1025px) {
+                font-size: 29px;
+                line-height: 46.4px;
+                margin-top: 24px;
+            }
+
+            @media (max-width:1024px) {
+                font-size: 16px;
+                line-height: 25.6px;
+                margin-top: 16px;
+            }
+        }
+    }
+}
