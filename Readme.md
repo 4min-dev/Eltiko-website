@@ -4,7 +4,7 @@
 ### npm run build - Сборка проекта в папку build
 ### npm install - Перед запуском проекта необходимо установить все зависимости
 ### npm run start - Локальный запуск проекта
-### git clone https://git.wizardstech.ru/TechWizards/NASgroup - Локальная копия проекта на устройстве
+### git clone https://github.com/4min-dev/Eltiko-website - Локальная копия проекта на устройстве
 ____________________
 
 # http://localhost:8080 - После запуска проект будет доступен по данному URL
