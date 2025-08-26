@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="catalog__page">
+        <header class="header" style="width: fit-content;">
+            <a href="/" class="header__logo blue">
+                <div class="header__logo__title">
+                    <span>NG</span>
+                </div>
+                <span>Group</span>
+            </a>
+            <button type="button" class="header__req__btn blue__btn brdrd send__request__btn" id="requestBtn">
+                Оставить заявку
+            </button>
+        </header>
+
+        <div class="house__popup__container" id="housePopupContainer">
+            <div class="house__popup__close__btn" id="popupCloseBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M1 1L11 11M1 11L11 1" stroke="#131313" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <div class="house__popup">
+                <div class="house__popup__card__block">
+                    <div class="house__popup__card__about__card">
+                        <div class="house__description__container">
+                            <div class="house__text__content">
+                                <span class="house__name" id="houseName">Загрузка...</span>
+                                <span class="house__description" id="houseDescription">Загрузка...</span>
+
+                                <div class="house__tags" id="houseTags">
+                                    <span class="house__tag">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="27"
+                                            viewBox="0 0 22 27" fill="none">
+                                            <path
+                                                d="M2 11.2305C2 17.6996 7.6593 23.0492 10.1643 25.1003C10.5228 25.3938 10.7041 25.5423 10.9716 25.6176C11.1799 25.6763 11.4864 25.6763 11.6947 25.6176C11.9626 25.5422 12.1428 25.3951 12.5026 25.1005C15.0076 23.0494 20.6666 17.7002 20.6666 11.2311C20.6666 8.78291 19.6833 6.43474 17.9329 4.70363C16.1826 2.97252 13.8088 2 11.3334 2C8.85809 2 6.48401 2.97267 4.73367 4.70378C2.98333 6.43488 2 8.78232 2 11.2305Z"
+                                                stroke="#0062F0" stroke-width="2.1" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M8.66667 10C8.66667 11.4728 9.86057 12.6667 11.3333 12.6667C12.8061 12.6667 14 11.4728 14 10C14 8.52724 12.8061 7.33333 11.3333 7.33333C9.86057 7.33333 8.66667 8.52724 8.66667 10Z"
+                                                stroke="#0062F0" stroke-width="2.1" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                        <span class="tag__name" id="houseLocation">Загрузка...</span>
+                                    </span>
+
+                                    <span class="house__tag">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M2.8125 20.5252L20.5312 3.41018M6.75 22.5C3.85051 22.5 1.5 20.1423 1.5 17.2338V6.76617C1.5 3.83263 3.88972 1.46461 6.81404 1.5004L17.314 1.62889C20.1883 1.66407 22.5 4.0113 22.5 6.89466V17.2338C22.5 20.1423 20.1495 22.5 17.25 22.5H6.75Z"
+                                                stroke="#0062F0" stroke-width="2.1" />
+                                        </svg>
+
+                                        <span class="tag__name" id="houseSize">Загрузка...</span>
+                                    </span>
+                                    <span class="house__tag">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20"
+                                            viewBox="0 0 25 20" fill="none">
+                                            <path
+                                                d="M21.9616 7.26849L18.8505 3.53516C18.3802 2.97085 18.1439 2.68852 17.8557 2.48568C17.6003 2.30595 17.3151 2.1727 17.0135 2.09157C16.6732 2 16.307 2 15.5724 2H5.83748C4.34401 2 3.59672 2 3.02629 2.29065C2.52452 2.54631 2.11687 2.95396 1.86121 3.45573C1.57056 4.02616 1.57056 4.77345 1.57056 6.26693V13.7336C1.57056 15.2271 1.57056 15.9734 1.86121 16.5438C2.11687 17.0456 2.52452 17.454 3.02629 17.7096C3.59616 18 4.34255 18 5.8331 18H15.5724C16.307 18 16.6732 17.9998 17.0135 17.9082C17.3151 17.8271 17.6003 17.6936 17.8557 17.5139C18.1439 17.3111 18.3802 17.0294 18.8505 16.4651L21.9616 12.7318C22.7714 11.7601 23.1754 11.2741 23.3301 10.7318C23.4665 10.2536 23.4665 9.74603 23.3301 9.26786C23.1754 8.72552 22.7714 8.2402 21.9616 7.26849Z"
+                                                stroke="#0062F0" stroke-width="2.41333" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                        <span class="tag__name" id="houseType">Загрузка...</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="contacts__container">
+                                <button class="blue__btn anim__btn" id="contactBtn">
+                                    <span class="btn__text">Связаться</span>
+                                    <span class="btn__text__before">Связаться</span>
+                                </button>
+
+                                <button class="blue__btn anim__btn" id="downloadPdfBtn">
+                                    <span class="btn__text">Скачать pdf</span>
+                                    <span class="btn__text__before">Скачать pdf</span>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="house__card__container">
+                            <div class="house__card" id="imageCard">
+                            </div>
+
+                            <div class="house__card__pagination__container">
+                                <div class="house__card__indicator__wrapper">
+                                    <div class="house__card__indicator" id="paginationIndicator"></div>
+                                </div>
+                                <div class="pagination__btns__container">
+                                    <button id="prevBtn" class="paginate__btn"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                            <path d="M6.66602 16L25.3327 16" stroke="#131313" stroke-width="2.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M15.9993 25.3333L6.66601 15.9999L15.9993 6.66659" stroke="#131313"
+                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg></button>
+                                    <button id="nextBtn" class="paginate__btn"> <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                            <path d="M25.334 16L6.66732 16" stroke="#131313" stroke-width="2.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M16.0007 25.3333L25.334 15.9999L16.0007 6.66659" stroke="#131313"
+                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="house__recommendation__block">
+                    <span class="block__title">Посмотрите так-же</span>
+                    <div class="recommendation__cards__container" id="recommendationCardsContainer">
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer" class="footer">
+                <div class="footer__text__logo">
+                    <span class="footer__text__firstline">
+                        <svg class="footer__firstline__svg" xmlns="http://www.w3.org/2000/svg" width="680" height="272"
+                            viewBox="0 0 680 272" fill="none">
+                            <path
+                                d="M151.469 5.23077H203.081V266.769H163.811L51.6116 106.857V266.769H0V5.23077H39.2697L151.469 164.769V5.23077Z"
+                                fill="#0062F0" />
+                            <path
+                                d="M419.943 266.769L404.236 219.692H299.89L284.182 266.769H228.457L320.086 5.23077H384.04L476.043 266.769H419.943ZM316.346 171.495H388.154L352.25 64.6374L316.346 171.495Z"
+                                fill="#0062F0" />
+                            <path
+                                d="M585.005 272C559.074 272 537.258 266.271 519.555 254.813C501.853 243.106 489.386 227.289 482.155 207.363L526.287 181.582C536.51 208.234 556.581 221.56 586.501 221.56C600.962 221.56 611.559 218.945 618.29 213.714C625.022 208.484 628.388 201.883 628.388 193.912C628.388 184.696 624.274 177.597 616.047 172.615C607.819 167.385 593.108 161.78 571.915 155.802C560.196 152.315 550.223 148.828 541.995 145.341C534.016 141.853 525.913 137.245 517.685 131.516C509.707 125.538 503.598 118.066 499.359 109.099C495.121 100.132 493.001 89.6703 493.001 77.7143C493.001 54.0513 501.354 35.2454 518.059 21.2967C535.014 7.09891 555.334 0 579.021 0C600.214 0 618.789 5.23077 634.746 15.6923C650.953 25.9048 663.544 40.2271 672.52 58.6593L629.136 83.6923C618.664 61.2747 601.959 50.0659 579.021 50.0659C568.299 50.0659 559.822 52.5568 553.589 57.5385C547.605 62.2711 544.613 68.4982 544.613 76.2198C544.613 84.4396 547.979 91.1648 554.711 96.3956C561.692 101.377 574.907 106.857 594.355 112.835C602.333 115.326 608.317 117.319 612.307 118.813C616.545 120.059 622.155 122.176 629.136 125.165C636.367 127.905 641.852 130.52 645.592 133.011C649.582 135.502 654.07 138.864 659.056 143.099C664.043 147.333 667.783 151.692 670.276 156.176C673.019 160.659 675.263 166.139 677.008 172.615C679.003 178.842 680 185.692 680 193.165C680 217.326 671.149 236.505 653.446 250.703C635.993 264.901 613.179 272 585.005 272Z"
+                                fill="#0062F0" />
+                        </svg>
+    
+                        <div class="footer__firstline__videoframe">
+                            <video src="/video/city.mp4" autoplay loop muted></video>
+                        </div>
+                    </span>
+    
+                    <span class="footer__text__secondline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1252" height="341" viewBox="0 0 1252 341"
+                            fill="none">
+                            <path
+                                d="M200.585 7.03444H199.585V8.03444V39.3009C180.528 13.7639 153.785 1 119.473 1C86.2626 1 58.1886 12.8672 35.3123 36.5816C12.4406 59.9816 1 88.3941 1 121.76C1 155.127 12.4411 183.693 35.31 207.401L35.3146 207.406C58.1924 230.811 86.2659 242.521 119.473 242.521C153.785 242.521 180.528 229.757 199.585 204.22V229.452C199.585 249.346 193.447 264.678 181.271 275.59L181.261 275.599L181.251 275.608C169.368 286.834 152.706 292.51 131.127 292.51C98.1404 292.51 75.8634 280.719 63.9584 257.314L63.48 256.373L62.5665 256.902L19.2136 281.968L18.3784 282.451L18.831 283.302C38.9427 321.165 76.1772 340 130.194 340C163.65 340 192.159 330.499 215.665 311.462C239.25 292.36 250.998 264.972 250.998 229.452V8.03444V7.03444H249.998H200.585ZM178.443 173.033L178.436 173.041C164.652 186.766 147.354 193.638 126.465 193.638C105.578 193.638 88.1208 186.767 74.0245 173.037C60.241 159.31 53.3454 142.241 53.3454 121.76C53.3454 101.28 60.2408 84.211 74.0241 70.484C88.1205 56.7542 105.578 49.8829 126.465 49.8829C147.354 49.8829 164.652 56.7551 178.436 70.48L178.443 70.4877C192.537 84.217 199.585 101.285 199.585 121.76C199.585 142.236 192.537 159.304 178.443 173.033ZM386.013 13.7921C375.006 20.4112 366.346 30.0175 360.025 42.5693V8.03444V7.03444H359.025H308.679H307.679V8.03444V240.128V241.128H308.679H359.025H360.025V240.128V123.153C360.025 99.5224 367.104 82.8679 381.049 72.906L381.055 72.9019L381.061 72.8977C395.15 62.5281 411.694 57.9404 430.749 59.1646L431.813 59.233V58.1667V3.85675V2.85675H430.813C413.119 2.85675 398.169 6.48236 386.013 13.7921ZM892.786 7.03444H891.786V8.03444V132.437C891.786 154.879 886.383 171.445 875.761 182.329C865.101 192.941 851.075 198.28 833.584 198.28C817.624 198.28 805.159 193.702 796.064 184.645C786.983 175.603 782.374 162.585 782.374 145.434V8.03444V7.03444H781.374H731.028H730.028V8.03444V150.54C730.028 180.438 738.322 204.076 755.016 221.328C771.701 238.568 793.572 247.163 820.531 247.163C852.457 247.163 876.27 236.044 891.786 213.723V240.128V241.128H892.786H943.131H944.131V240.128V8.03444V7.03444H943.131H892.786ZM1052.35 333.966H1053.35V332.966V210.168C1072.42 234.843 1099.32 247.163 1133.93 247.163C1166.21 247.163 1193.82 235.288 1216.69 211.579C1239.57 187.863 1251 158.675 1251 124.081C1251 89.7949 1239.57 60.7637 1216.69 37.0504C1193.82 13.0317 1166.22 1 1133.93 1C1099.32 1 1072.42 13.4669 1053.35 38.4301V8.03444V7.03444H1052.35H1002H1001V8.03444V332.966V333.966H1002H1052.35ZM1177.96 71.8648L1177.97 71.8725C1191.75 85.5942 1198.65 102.971 1198.65 124.081C1198.65 145.192 1191.75 162.727 1177.96 176.761C1164.18 190.481 1146.89 197.351 1126 197.351C1105.12 197.351 1087.82 190.481 1074.04 176.761C1060.25 162.727 1053.35 145.192 1053.35 124.081C1053.35 102.971 1060.25 85.5942 1074.03 71.8726L1074.04 71.8647C1087.82 57.8332 1105.12 50.8113 1126 50.8113C1146.88 50.8113 1164.18 57.8332 1177.96 71.8648ZM479.227 211.598C503.347 235.304 532.658 247.163 567.1 247.163C601.849 247.163 631.162 235.306 654.975 211.596C679.099 187.884 691.166 158.691 691.166 124.081C691.166 89.4713 679.099 60.2785 654.975 36.5671C631.162 12.8562 601.849 1 567.1 1C532.658 1 503.347 12.8586 479.227 36.565C455.101 60.2768 443.033 89.4703 443.033 124.081C443.033 158.692 455.101 187.886 479.227 211.598ZM567.1 196.423C546.842 196.423 529.851 189.557 516.062 175.826C502.279 162.101 495.379 144.878 495.379 124.081C495.379 103.285 502.279 86.0613 516.062 72.3367C529.851 58.6057 546.842 51.7397 567.1 51.7397C587.358 51.7397 604.349 58.6057 618.138 72.3367C631.921 86.0613 638.821 103.285 638.821 124.081C638.821 144.878 631.921 162.101 618.138 175.826C604.349 189.557 587.358 196.423 567.1 196.423Z"
+                                stroke="#0062F0" stroke-width="2" />
+                        </svg>
+                    </span>
+                </div>
+    
+                <nav class="footer__navbar">
+                    <span class="footer__copyright">©️2024</span>
+                    <div class="network__container" id="network__container">
+                        <a class="network__card" href="https://wa.me/79661961661" target="_blank">
+                            <img src="/static/icons/whatsapp.svg" alt="Whatsapp" />
+                            <span class="network__title">Whatsapp</span>
+                        </a>
+                        <a class="network__card" href="https://www.instagram.com/broker_int.realty" target="_blank">
+                            <img src="/static/icons/instagram.svg" alt="Instagram" />
+                            <span class="network__title">Instagram</span>
+                        </a>
+                        <a class="network__card" href="https://t.me/sitystoriess" target="_blank">
+                            <img src="/static/icons/telegram.svg" alt="Telegram" />
+                            <span class="network__title">Telegram</span>
+                        </a>
+    
+                    </div>
+                </nav>
+            </footer>
+        </div>
+
+        <div class="filter__popup__container" id="filterPopupContainer">
+            <div class="filter__popup">
+                <div>
+                    <span class="popup__title">Фильтр</span>
+                    <div class="filter__blocks__container">
+                        <div class="filter__block main__block" id="main__filter__block">
+                            <div class="filter__block__title__container">
+                                <span class="filter__block__title">Основное</span>
+                                <span class="filter__block__title__amount" id="mainFilterAmount"></span>
+                            </div>
+                            <div class="filter__cards__container" id="mainFilterCardsContainer">
+                            </div>
+                        </div>
+        
+                        <div class="filter__block commercial__block" id="commercial__filter__block">
+                            <div class="filter__block__title__container">
+                                <span class="filter__block__title">Коммерческая недвижимость</span>
+                                <span class="filter__block__title__amount" id="commercialFilterAmount"></span>
+                            </div>
+                            <div class="filter__cards__container" id="commercialFilterCardsContainer">
+                            </div>
+                        </div>
+        
+                        <div class="filter__cards__form__container">
+                            <div class="filter__card__form__input">
+                                <div class="filter__card__input__container">
+                                    <span class="input__title">Площадь м²</span>
+                                    <input type="number" id="areaFrom" placeholder="От" />
+                                </div>
+                                <input type="number" id="areaTo" placeholder="До" />
+                            </div>
+        
+                            <div class="filter__card__form__input">
+                                <div class="filter__card__input__container">
+                                    <span class="input__title">Цена ₽</span>
+                                    <input type="number" id="priceFrom" placeholder="От" />
+                                </div>
+                                <input type="number" id="priceTo" placeholder="До" />
+                            </div>
+                        </div>
+        
+                        <div class="filter__apply__btns__container">
+                            <button class="blue__btn anim__btn" id="applyBtn">
+                                <span class="btn__text" id="applyBtnText">
+                                    Применить
+                                </span>
+
+                                <span class='btn__text__before' id="applyBtnTextBefore">
+                                    Применить
+                                </span>
+                            </button>
+        
+                            <button class="blue__btn anim__btn" id="cancelBtn">
+                                <span class="btn__text">
+                                    Отменить
+                                </span>
+
+                                <span class='btn__text__before'>
+                                    Отменить
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog__content">
+            <div class="catalog__heading">
+                <div class="catalog__heading__text__container">
+                    <div class="catalog__heading__title__container">
+                        <span class="catalog__title dekstop">Каталог объектов</span>
+                        <span class="catalog__title adaptive">Каталог</span>
+                        <span class="catalog__amount">232 Объявления</span>
+                    </div>
+
+                    <button id="filterBtn" class="catalog__filter__btn adaptive" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
+                            <path
+                                d="M11.3333 20.0002H26M2 20.0002H6M6 20.0002V22.6668M6 20.0002V17.3335M24.6667 12.0002H26M2 12.0002H19.3333M19.3333 12.0002V14.6668M19.3333 12.0002V9.3335M16.6667 4.00016H26M2 4.00016H11.3333M11.3333 4.00016V6.66683M11.3333 4.00016V1.3335"
+                                stroke="#0062F0" stroke-width="2.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="catalog__heading__inputs">
+                    <div class="catalog__search__input">
+                        <input type="text" placeholder="Поиск">
+                        <button type="button" class="catalog__search__input__btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M19 19L14.6569 14.6569M14.6569 14.6569C16.1046 13.2091 17 11.2091 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17C11.2091 17 13.2091 16.1046 14.6569 14.6569Z" stroke="#8EA0B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <button id="filterBtn" class="catalog__filter__btn dekstop" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 28 24" fill="none">
+                            <path
+                                d="M11.3333 20.0002H26M2 20.0002H6M6 20.0002V22.6668M6 20.0002V17.3335M24.6667 12.0002H26M2 12.0002H19.3333M19.3333 12.0002V14.6668M19.3333 12.0002V9.3335M16.6667 4.00016H26M2 4.00016H11.3333M11.3333 4.00016V6.66683M11.3333 4.00016V1.3335"
+                                stroke="#0062F0" stroke-width="2.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="catalog__cards__block">
+                <span class="catalog__cards__block__title">Аренда</span>
+                <div class="catalog__cards__container" id="catalogCardsContainer">
+                </div>
+
+                <div class="show__more__cards__container">
+                    <button href="/catalog" id="catalog-link" class="aqua__fade__btn blue__btn anim__btn">
+                        <span class="btn__text">Показать еще
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <div class="btn__link__svg" id="catalog-link1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer" class="footer">
+            <div class="footer__text__logo">
+                <span class="footer__text__firstline">
+                    <svg class="footer__firstline__svg" xmlns="http://www.w3.org/2000/svg" width="680" height="272"
+                        viewBox="0 0 680 272" fill="none">
+                        <path
+                            d="M151.469 5.23077H203.081V266.769H163.811L51.6116 106.857V266.769H0V5.23077H39.2697L151.469 164.769V5.23077Z"
+                            fill="#0062F0" />
+                        <path
+                            d="M419.943 266.769L404.236 219.692H299.89L284.182 266.769H228.457L320.086 5.23077H384.04L476.043 266.769H419.943ZM316.346 171.495H388.154L352.25 64.6374L316.346 171.495Z"
+                            fill="#0062F0" />
+                        <path
+                            d="M585.005 272C559.074 272 537.258 266.271 519.555 254.813C501.853 243.106 489.386 227.289 482.155 207.363L526.287 181.582C536.51 208.234 556.581 221.56 586.501 221.56C600.962 221.56 611.559 218.945 618.29 213.714C625.022 208.484 628.388 201.883 628.388 193.912C628.388 184.696 624.274 177.597 616.047 172.615C607.819 167.385 593.108 161.78 571.915 155.802C560.196 152.315 550.223 148.828 541.995 145.341C534.016 141.853 525.913 137.245 517.685 131.516C509.707 125.538 503.598 118.066 499.359 109.099C495.121 100.132 493.001 89.6703 493.001 77.7143C493.001 54.0513 501.354 35.2454 518.059 21.2967C535.014 7.09891 555.334 0 579.021 0C600.214 0 618.789 5.23077 634.746 15.6923C650.953 25.9048 663.544 40.2271 672.52 58.6593L629.136 83.6923C618.664 61.2747 601.959 50.0659 579.021 50.0659C568.299 50.0659 559.822 52.5568 553.589 57.5385C547.605 62.2711 544.613 68.4982 544.613 76.2198C544.613 84.4396 547.979 91.1648 554.711 96.3956C561.692 101.377 574.907 106.857 594.355 112.835C602.333 115.326 608.317 117.319 612.307 118.813C616.545 120.059 622.155 122.176 629.136 125.165C636.367 127.905 641.852 130.52 645.592 133.011C649.582 135.502 654.07 138.864 659.056 143.099C664.043 147.333 667.783 151.692 670.276 156.176C673.019 160.659 675.263 166.139 677.008 172.615C679.003 178.842 680 185.692 680 193.165C680 217.326 671.149 236.505 653.446 250.703C635.993 264.901 613.179 272 585.005 272Z"
+                            fill="#0062F0" />
+                    </svg>
+
+                    <div class="footer__firstline__videoframe">
+                        <video src="/video/city.mp4" autoplay loop muted></video>
+                    </div>
+                </span>
+
+                <span class="footer__text__secondline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1252" height="341" viewBox="0 0 1252 341"
+                        fill="none">
+                        <path
+                            d="M200.585 7.03444H199.585V8.03444V39.3009C180.528 13.7639 153.785 1 119.473 1C86.2626 1 58.1886 12.8672 35.3123 36.5816C12.4406 59.9816 1 88.3941 1 121.76C1 155.127 12.4411 183.693 35.31 207.401L35.3146 207.406C58.1924 230.811 86.2659 242.521 119.473 242.521C153.785 242.521 180.528 229.757 199.585 204.22V229.452C199.585 249.346 193.447 264.678 181.271 275.59L181.261 275.599L181.251 275.608C169.368 286.834 152.706 292.51 131.127 292.51C98.1404 292.51 75.8634 280.719 63.9584 257.314L63.48 256.373L62.5665 256.902L19.2136 281.968L18.3784 282.451L18.831 283.302C38.9427 321.165 76.1772 340 130.194 340C163.65 340 192.159 330.499 215.665 311.462C239.25 292.36 250.998 264.972 250.998 229.452V8.03444V7.03444H249.998H200.585ZM178.443 173.033L178.436 173.041C164.652 186.766 147.354 193.638 126.465 193.638C105.578 193.638 88.1208 186.767 74.0245 173.037C60.241 159.31 53.3454 142.241 53.3454 121.76C53.3454 101.28 60.2408 84.211 74.0241 70.484C88.1205 56.7542 105.578 49.8829 126.465 49.8829C147.354 49.8829 164.652 56.7551 178.436 70.48L178.443 70.4877C192.537 84.217 199.585 101.285 199.585 121.76C199.585 142.236 192.537 159.304 178.443 173.033ZM386.013 13.7921C375.006 20.4112 366.346 30.0175 360.025 42.5693V8.03444V7.03444H359.025H308.679H307.679V8.03444V240.128V241.128H308.679H359.025H360.025V240.128V123.153C360.025 99.5224 367.104 82.8679 381.049 72.906L381.055 72.9019L381.061 72.8977C395.15 62.5281 411.694 57.9404 430.749 59.1646L431.813 59.233V58.1667V3.85675V2.85675H430.813C413.119 2.85675 398.169 6.48236 386.013 13.7921ZM892.786 7.03444H891.786V8.03444V132.437C891.786 154.879 886.383 171.445 875.761 182.329C865.101 192.941 851.075 198.28 833.584 198.28C817.624 198.28 805.159 193.702 796.064 184.645C786.983 175.603 782.374 162.585 782.374 145.434V8.03444V7.03444H781.374H731.028H730.028V8.03444V150.54C730.028 180.438 738.322 204.076 755.016 221.328C771.701 238.568 793.572 247.163 820.531 247.163C852.457 247.163 876.27 236.044 891.786 213.723V240.128V241.128H892.786H943.131H944.131V240.128V8.03444V7.03444H943.131H892.786ZM1052.35 333.966H1053.35V332.966V210.168C1072.42 234.843 1099.32 247.163 1133.93 247.163C1166.21 247.163 1193.82 235.288 1216.69 211.579C1239.57 187.863 1251 158.675 1251 124.081C1251 89.7949 1239.57 60.7637 1216.69 37.0504C1193.82 13.0317 1166.22 1 1133.93 1C1099.32 1 1072.42 13.4669 1053.35 38.4301V8.03444V7.03444H1052.35H1002H1001V8.03444V332.966V333.966H1002H1052.35ZM1177.96 71.8648L1177.97 71.8725C1191.75 85.5942 1198.65 102.971 1198.65 124.081C1198.65 145.192 1191.75 162.727 1177.96 176.761C1164.18 190.481 1146.89 197.351 1126 197.351C1105.12 197.351 1087.82 190.481 1074.04 176.761C1060.25 162.727 1053.35 145.192 1053.35 124.081C1053.35 102.971 1060.25 85.5942 1074.03 71.8726L1074.04 71.8647C1087.82 57.8332 1105.12 50.8113 1126 50.8113C1146.88 50.8113 1164.18 57.8332 1177.96 71.8648ZM479.227 211.598C503.347 235.304 532.658 247.163 567.1 247.163C601.849 247.163 631.162 235.306 654.975 211.596C679.099 187.884 691.166 158.691 691.166 124.081C691.166 89.4713 679.099 60.2785 654.975 36.5671C631.162 12.8562 601.849 1 567.1 1C532.658 1 503.347 12.8586 479.227 36.565C455.101 60.2768 443.033 89.4703 443.033 124.081C443.033 158.692 455.101 187.886 479.227 211.598ZM567.1 196.423C546.842 196.423 529.851 189.557 516.062 175.826C502.279 162.101 495.379 144.878 495.379 124.081C495.379 103.285 502.279 86.0613 516.062 72.3367C529.851 58.6057 546.842 51.7397 567.1 51.7397C587.358 51.7397 604.349 58.6057 618.138 72.3367C631.921 86.0613 638.821 103.285 638.821 124.081C638.821 144.878 631.921 162.101 618.138 175.826C604.349 189.557 587.358 196.423 567.1 196.423Z"
+                            stroke="#0062F0" stroke-width="2" />
+                    </svg>
+                </span>
+            </div>
+
+            <nav class="footer__navbar">
+                <span class="footer__copyright">©️2024</span>
+                <div class="network__container" id="network__container">
+                    <a class="network__card" href="https://wa.me/79661961661" target="_blank">
+                        <img src="/static/icons/whatsapp.svg" alt="Whatsapp" />
+                        <span class="network__title">Whatsapp</span>
+                    </a>
+                    <a class="network__card" href="https://www.instagram.com/broker_int.realty" target="_blank">
+                        <img src="/static/icons/instagram.svg" alt="Instagram" />
+                        <span class="network__title">Instagram</span>
+                    </a>
+                    <a class="network__card" href="https://t.me/sitystoriess" target="_blank">
+                        <img src="/static/icons/telegram.svg" alt="Telegram" />
+                        <span class="network__title">Telegram</span>
+                    </a>
+
+                </div>
+            </nav>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <script type="module" src="/JS/popup/closePopupByEscape.js"></script>
+    <script type="module" src="/JS/UI/header/header.js"></script>
+    <script type="module" src="/pages/catalogPage/UI/cards/catalogCardsRender.js"></script>
+    <script type="module" src="/pages/catalogPage/UI/popup/housePopup/housePopup.js"></script>
+    <script type="module" src="/pages/catalogPage/UI/popup/filterPopup/filterPopup.js"></script>
+    <script type="module" src="../../JS/animations/aquaFadeBtnAnimation.js"></script>
+    <script type="module" src="/JS/UI/footer/footer.js"></script>
+</body>
+</html>

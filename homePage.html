@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="home__page">
+        <div class="send__request__popup__overlay" id="popupOverlay">
+            <div class="send__request__popup" id="requestPopup">
+                <div class="popup__title">
+                    <span>Заполните</span>
+                    <span>все поля заявки</span>
+                </div>
+
+                <button type="button" class="close__popup__btn" id="closePopupBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M1 1L11 11M1 11L11 1" stroke="#131313" strokeWidth="2" strokeLinecap="round"
+                            strokeLinejoin="round" />
+                    </svg>
+                </button>
+
+                <form class="send__request__popup__form" id="popupForm">
+                    <span class="input__title">Ваше имя</span>
+                    <input type="text" placeholder="Поиск" required class="name__input" id="nameInput" />
+
+                    <span class="input__title">Номер телефона</span>
+                    <input type='text' placeholder='+7(___)___-__-__' required className='phone__input' id="phoneInput"
+                        ref="phone__input__ref" maxlength="17" />
+
+                    <span class="input__title">Комментарий</span>
+                    <textarea placeholder="Расскажите подробнее" required class="message__input"
+                        id="messageInput"></textarea>
+
+                    <button type="submit" class="blue__btn send__request__btn anim__btn">
+                        <span class="btn__text">Оставить заявку</span>
+                    </button>
+                </form>
+
+                <div class="privacy__policy__information">
+                    <span>Нажимая на кнопку, вы соглашаетесь</span>
+                    <span><a href="#">с условиями конфиденциальности</a></span>
+                </div>
+            </div>
+        </div>
+
+        <header class="header">
+            <a href="/" class="header__logo white">
+                <div class="header__logo__title">
+                    <span>NG</span>
+                </div>
+                <span>Group</span>
+            </a>
+            <button type="button" class="header__req__btn blue__btn brdrd send__request__btn" id="requestBtn"
+                style="display: none;">
+                Оставить заявку
+            </button>
+        </header>
+
+        <section id='started__section__main__page'>
+            <div class="started__section__background">
+                <img class='dekstop' src='/static/images/startedSectionBackground.png' alt='Background image' />
+                <img class='adaptive' src='/static/images/startedSectionBackground__adaptive.png' />
+            </div>
+
+            <div class='author__about__content'>
+                <span class='author__text__content'>
+                    Брокер <div>по недвижимости</div>
+                </span>
+
+                <div class='author__image'>
+                    <img src="/static/images/authorImage.png" alt='Person image' />
+                </div>
+
+                <div class='author__personal__content'>
+                    <div class='author__name'>
+                        Анна Франкевич
+                    </div>
+                    <div class='author__description'>
+                        <span class="dekstop">поможет с выбором жилья</span>
+                        <span class="adaptive">Брокер по недвижимости</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="started__section__landing_container">
+                <div class='started__section__landing__text'>
+                    <div class='section__title'>
+                        <span class='first__text__block'>Премиум-жилье</span>
+                        <span class='second__text__block'>для тех, кто ценит</span>
+                        <span>высокие стандарты</span>
+                    </div>
+
+                    <div class='section__description'>
+                        Мы находим лучшее среди лучшего на рынке недвижимости
+                    </div>
+                </div>
+
+                <div class='landing__btns__container'>
+                    <button type='button' class='blue__btn anim__btn send__request__btn'>
+                        <span class="btn__text">Оставить заявку</span>
+                    </button>
+
+                    <a href='catalogPage.html' class='opacity__btn anim__btn'>
+                        <span class='btn__text dekstop'>Открыть каталог</span>
+                        <span class='adaptive'>Каталог</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about__section" class="about__section">
+            <div class="section__text__content">
+                <div class="section__title">О нас</div>
+                <div class="section__description">
+                    <span class="gray__text">Мы специализируемся</span> на продаже, покупке и аренде элитной
+                    недвижимости,
+                    <span class="gray__text">предоставляя доступ к лучшим объектам.
+                        Наша команда экспертов предлагает</span> индивидуальные решения,
+                    <span class="gray__text">ценит ваше время и конфиденциальность,
+                        обеспечивая полный цикл услуг — </span> от консультации до заключения сделки.
+                </div>
+            </div>
+
+            <div class="about__section__aside__panel">
+                <div class="about__aside__first__block gray__block">
+                    <span class="gray__text">С помощью наших риелторов</span>
+                    <div class="transactions__amount__container">
+                        <span class="block__title">1000+</span> <span class="aqua__text">Успешных сделок</span>
+                    </div>
+                </div>
+
+                <div class="about__aside__second__block gray__block">
+
+                    <div class="about__aside__country__card" id="country__card__1">
+                        <div class="country__image">
+                            <img src="/static/images/country_1.png" alt="Франция">
+                        </div>
+                        <span class="country__name">Франция</span>
+                        <span class="aqua__text">Покупка</span>
+                    </div>
+                    <div class="about__aside__country__card" id="country__card__2">
+                        <div class="country__image">
+                            <img src="/static/images/country_2.png" alt="Россия">
+                        </div>
+                        <span class="country__name">Россия</span>
+                        <span class="aqua__text">Продажа</span>
+                    </div>
+
+                    <div class="about__aside__country__card" id="country__card__3">
+                        <div class="country__image">
+                            <img src="/static/images/country_3.png" alt="Бали">
+                        </div>
+                        <span class="country__name">Бали</span>
+                        <span class="aqua__text">Аренда</span>
+                    </div>
+
+                    <div class="about__aside__country__card" id="country__card__4">
+                        <div class="country__image">
+                            <img src="/static/images/country_4.png" alt="Дубай">
+                        </div>
+                        <span class="country__name">Дубай</span>
+                        <span class="aqua__text">Продажа</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services__section" class="services-section">
+            <div class="section__text__content">
+                <span class="section__title">Наши услуги</span>
+                <span class="section__description">
+                    <span class="gray__text">Полный спектр</span> услуг по продаже
+                    <span class="gray__text"> жилой и коммерческой недвижимости:</span> оценка, маркетинг, показы и
+                    юридическая поддержка.
+                </span>
+            </div>
+
+            <div class="service__cards__container" id="service__cards__container">
+
+                <a href="#" class="service__card">
+                    <div class="service__card__about__text">
+                        <span class="service__title">Услуга 1</span>
+                        <span class="service__description">Описание услуги 1</span>
+                    </div>
+                    <div class="service__card__link">
+                        <div class="service__svg__container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M1.5 1.5H16.5M16.5 1.5V16.5M16.5 1.5L1.5 16.5" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="service__card">
+                    <div class="service__card__about__text">
+                        <span class="service__title">Услуга 2</span>
+                        <span class="service__description">Описание услуги 2</span>
+                    </div>
+                    <div class="service__card__link">
+                        <div class="service__svg__container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M1.5 1.5H16.5M16.5 1.5V16.5M16.5 1.5L1.5 16.5" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="service__card">
+                    <div class="service__card__about__text">
+                        <span class="service__title">Услуга 3</span>
+                        <span class="service__description">Описание услуги 3</span>
+                    </div>
+                    <div class="service__card__link">
+                        <div class="service__svg__container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M1.5 1.5H16.5M16.5 1.5V16.5M16.5 1.5L1.5 16.5" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="service__card">
+                    <div class="service__card__about__text">
+                        <span class="service__title">Услуга 4</span>
+                        <span class="service__description">Описание услуги 4</span>
+                    </div>
+                    <div class="service__card__link">
+                        <div class="service__svg__container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                <path d="M1.5 1.5H16.5M16.5 1.5V16.5M16.5 1.5L1.5 16.5" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section id="catalog__section" class="catalog-section">
+            <div class="catalog__section__heading">
+                <span class="section__title">Объекты недвижимости</span>
+                <a href="/catalogPage.html" id="catalog-link" class="aqua__fade__btn blue__btn anim__btn">
+                    <span class="btn__text">Открыть каталог
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                            <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    <div class="btn__link__svg" id="catalog-link1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                            <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+            <div class="catalog__items__container">
+                <div class="catalog__items__wrapper" id="catalog-items-wrapper">
+
+                    <a href="/catalogPage.html" class="catalog__item__card">
+                        <div class="catalog__item__image">
+                            <span class="catalog__item__title__type adaptive">Продажа</span>
+                            <img src="/static/images/interior__7.png" alt="Коттедж в Княжьевом" />
+                        </div>
+                        <div class="catalog__item__text">
+                            <div class="catalog__item__text__container">
+                                <div class="catalog__item__title__container">
+                                    <span class="catalog__item__title">Коттедж в Княжьевом</span>
+                                    <span class="catalog__item__title__type aqua__text dekstop">Продажа</span>
+                                </div>
+                                <span class="catalog__item__description">Полностью готов к проживанию. Отделка в
+                                    современном стиле, с мебелью. Участок 15 соток. На участке расположен гостевой дом
+                                    со своей</span>
+                            </div>
+                            <div class="catalog__item__other__information">
+                                <div class="catalog__item__location">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21"
+                                        fill="none">
+                                        <path
+                                            d="M1.25 8.42285C1.25 13.2747 5.49448 17.2869 7.37319 18.8252C7.64206 19.0454 7.77811 19.1568 7.97871 19.2132C8.13491 19.2572 8.3648 19.2572 8.521 19.2132C8.72197 19.1567 8.85707 19.0464 9.12695 18.8254C11.0057 17.2871 15.2499 13.2751 15.2499 8.4233C15.2499 6.58718 14.5125 4.82605 13.1997 3.52772C11.887 2.22939 10.1066 1.5 8.25008 1.5C6.39357 1.5 4.61301 2.2295 3.30025 3.52783C1.9875 4.82616 1.25 6.58674 1.25 8.42285Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M6.25 7.5C6.25 8.60457 7.14543 9.5 8.25 9.5C9.35457 9.5 10.25 8.60457 10.25 7.5C10.25 6.39543 9.35457 5.5 8.25 5.5C7.14543 5.5 6.25 6.39543 6.25 7.5Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">Москва</span>
+                                </div>
+                                <div class="catalog__item__size">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
+                                        fill="none">
+                                        <path
+                                            d="M2.22949 15.8939L15.5186 3.05763M5.18262 17.375C3.008 17.375 1.24512 15.6067 1.24512 13.4254V5.57462C1.24512 3.37447 3.03741 1.59846 5.23065 1.6253L13.1057 1.72167C15.2614 1.74805 16.9951 3.50847 16.9951 5.67099V13.4254C16.9951 15.6067 15.2322 17.375 13.0576 17.375H5.18262Z"
+                                            stroke="#8EA0B2" stroke-width="1.575"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">200м2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/catalogPage.html" class="catalog__item__card">
+                        <div class="catalog__item__image">
+                            <span class="catalog__item__title__type adaptive">Продажа</span>
+                            <img src="/static/images/interior__7.png" alt="Коттедж в Княжьевом" />
+                        </div>
+                        <div class="catalog__item__text">
+                            <div class="catalog__item__text__container">
+                                <div class="catalog__item__title__container">
+                                    <span class="catalog__item__title">Коттедж в Княжьевом</span>
+                                    <span class="catalog__item__title__type aqua__text dekstop">Продажа</span>
+                                </div>
+                                <span class="catalog__item__description">Полностью готов к проживанию. Отделка в
+                                    современном стиле, с мебелью. Участок 15 соток. На участке расположен гостевой дом
+                                    со своей</span>
+                            </div>
+                            <div class="catalog__item__other__information">
+                                <div class="catalog__item__location">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21"
+                                        fill="none">
+                                        <path
+                                            d="M1.25 8.42285C1.25 13.2747 5.49448 17.2869 7.37319 18.8252C7.64206 19.0454 7.77811 19.1568 7.97871 19.2132C8.13491 19.2572 8.3648 19.2572 8.521 19.2132C8.72197 19.1567 8.85707 19.0464 9.12695 18.8254C11.0057 17.2871 15.2499 13.2751 15.2499 8.4233C15.2499 6.58718 14.5125 4.82605 13.1997 3.52772C11.887 2.22939 10.1066 1.5 8.25008 1.5C6.39357 1.5 4.61301 2.2295 3.30025 3.52783C1.9875 4.82616 1.25 6.58674 1.25 8.42285Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M6.25 7.5C6.25 8.60457 7.14543 9.5 8.25 9.5C9.35457 9.5 10.25 8.60457 10.25 7.5C10.25 6.39543 9.35457 5.5 8.25 5.5C7.14543 5.5 6.25 6.39543 6.25 7.5Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">Москва</span>
+                                </div>
+                                <div class="catalog__item__size">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
+                                        fill="none">
+                                        <path
+                                            d="M2.22949 15.8939L15.5186 3.05763M5.18262 17.375C3.008 17.375 1.24512 15.6067 1.24512 13.4254V5.57462C1.24512 3.37447 3.03741 1.59846 5.23065 1.6253L13.1057 1.72167C15.2614 1.74805 16.9951 3.50847 16.9951 5.67099V13.4254C16.9951 15.6067 15.2322 17.375 13.0576 17.375H5.18262Z"
+                                            stroke="#8EA0B2" stroke-width="1.575"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">200м2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/catalogPage.html" class="catalog__item__card">
+                        <div class="catalog__item__image">
+                            <span class="catalog__item__title__type adaptive">Продажа</span>
+                            <img src="/static/images/interior__7.png" alt="Коттедж в Княжьевом" />
+                        </div>
+                        <div class="catalog__item__text">
+                            <div class="catalog__item__text__container">
+                                <div class="catalog__item__title__container">
+                                    <span class="catalog__item__title">Коттедж в Княжьевом</span>
+                                    <span class="catalog__item__title__type aqua__text dekstop">Продажа</span>
+                                </div>
+                                <span class="catalog__item__description">Полностью готов к проживанию. Отделка в
+                                    современном стиле, с мебелью. Участок 15 соток. На участке расположен гостевой дом
+                                    со своей</span>
+                            </div>
+                            <div class="catalog__item__other__information">
+                                <div class="catalog__item__location">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21"
+                                        fill="none">
+                                        <path
+                                            d="M1.25 8.42285C1.25 13.2747 5.49448 17.2869 7.37319 18.8252C7.64206 19.0454 7.77811 19.1568 7.97871 19.2132C8.13491 19.2572 8.3648 19.2572 8.521 19.2132C8.72197 19.1567 8.85707 19.0464 9.12695 18.8254C11.0057 17.2871 15.2499 13.2751 15.2499 8.4233C15.2499 6.58718 14.5125 4.82605 13.1997 3.52772C11.887 2.22939 10.1066 1.5 8.25008 1.5C6.39357 1.5 4.61301 2.2295 3.30025 3.52783C1.9875 4.82616 1.25 6.58674 1.25 8.42285Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M6.25 7.5C6.25 8.60457 7.14543 9.5 8.25 9.5C9.35457 9.5 10.25 8.60457 10.25 7.5C10.25 6.39543 9.35457 5.5 8.25 5.5C7.14543 5.5 6.25 6.39543 6.25 7.5Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">Москва</span>
+                                </div>
+                                <div class="catalog__item__size">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
+                                        fill="none">
+                                        <path
+                                            d="M2.22949 15.8939L15.5186 3.05763M5.18262 17.375C3.008 17.375 1.24512 15.6067 1.24512 13.4254V5.57462C1.24512 3.37447 3.03741 1.59846 5.23065 1.6253L13.1057 1.72167C15.2614 1.74805 16.9951 3.50847 16.9951 5.67099V13.4254C16.9951 15.6067 15.2322 17.375 13.0576 17.375H5.18262Z"
+                                            stroke="#8EA0B2" stroke-width="1.575"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">200м2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/catalogPage.html" class="catalog__item__card">
+                        <div class="catalog__item__image">
+                            <span class="catalog__item__title__type adaptive">Продажа</span>
+                            <img src="/static/images/interior__7.png" alt="Коттедж в Княжьевом" />
+                        </div>
+                        <div class="catalog__item__text">
+                            <div class="catalog__item__text__container">
+                                <div class="catalog__item__title__container">
+                                    <span class="catalog__item__title">Коттедж в Княжьевом</span>
+                                    <span class="catalog__item__title__type aqua__text dekstop">Продажа</span>
+                                </div>
+                                <span class="catalog__item__description">Полностью готов к проживанию. Отделка в
+                                    современном стиле, с мебелью. Участок 15 соток. На участке расположен гостевой дом
+                                    со своей</span>
+                            </div>
+                            <div class="catalog__item__other__information">
+                                <div class="catalog__item__location">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21"
+                                        fill="none">
+                                        <path
+                                            d="M1.25 8.42285C1.25 13.2747 5.49448 17.2869 7.37319 18.8252C7.64206 19.0454 7.77811 19.1568 7.97871 19.2132C8.13491 19.2572 8.3648 19.2572 8.521 19.2132C8.72197 19.1567 8.85707 19.0464 9.12695 18.8254C11.0057 17.2871 15.2499 13.2751 15.2499 8.4233C15.2499 6.58718 14.5125 4.82605 13.1997 3.52772C11.887 2.22939 10.1066 1.5 8.25008 1.5C6.39357 1.5 4.61301 2.2295 3.30025 3.52783C1.9875 4.82616 1.25 6.58674 1.25 8.42285Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M6.25 7.5C6.25 8.60457 7.14543 9.5 8.25 9.5C9.35457 9.5 10.25 8.60457 10.25 7.5C10.25 6.39543 9.35457 5.5 8.25 5.5C7.14543 5.5 6.25 6.39543 6.25 7.5Z"
+                                            stroke="#8EA0B2" stroke-width="1.575" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">Москва</span>
+                                </div>
+                                <div class="catalog__item__size">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
+                                        fill="none">
+                                        <path
+                                            d="M2.22949 15.8939L15.5186 3.05763M5.18262 17.375C3.008 17.375 1.24512 15.6067 1.24512 13.4254V5.57462C1.24512 3.37447 3.03741 1.59846 5.23065 1.6253L13.1057 1.72167C15.2614 1.74805 16.9951 3.50847 16.9951 5.67099V13.4254C16.9951 15.6067 15.2322 17.375 13.0576 17.375H5.18262Z"
+                                            stroke="#8EA0B2" stroke-width="1.575"></path>
+                                    </svg>
+                                    <span class="catalog__item__other__text gray__text">200м2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback__section" class="feedback__section">
+            <div class="section__text__content">
+                <span class="section__title">Отзывы</span>
+                <span class="section__description">
+                    <span class="gray__text">В этом разделе мы собрали</span> мнения и впечатления
+                    <span class="gray__text"> наших клиентов, которые уже</span> воспользовались <span
+                        class="gray__text">нашими услугами</span>
+                </span>
+            </div>
+
+            <div class="feedback__cards__container">
+                <div class="feedback__cards__wrapper to__left">
+                    <div class="feedback__card">
+                        <span class="feedback__title">
+                            <span class="gray__text">Хочу выразить</span> благодарность
+                            <span class="gray__text"> команде за их терпение</span> и поддержку.
+                            <span class="gray__text"> Они помогли мне найти</span> идеальный офис
+                            <span class="gray__text"> для моего бизнеса.</span> Рекомендую!
+                        </span>
+                        <div class="feedback__author">
+                            <div class="feedback__author__personal">
+                                <span class="feedback__author__name">Игорь Пескарёв</span>
+                                <span class="feedback__author__company gray__text">Майнкрафт company</span>
+                            </div>
+                            <div class="feedback__author__avatar">
+                                <img src="/static/images/man__1.png" alt="Author image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback__card">
+                        <span class="feedback__title">
+                            <span class="gray__text">Хочу выразить</span> благодарность
+                            <span class="gray__text"> команде за их терпение</span> и поддержку.
+                            <span class="gray__text"> Они помогли мне найти</span> идеальный офис
+                            <span class="gray__text"> для моего бизнеса.</span> Рекомендую!
+                        </span>
+                        <div class="feedback__author">
+                            <div class="feedback__author__personal">
+                                <span class="feedback__author__name">Игорь Пескарёв</span>
+                                <span class="feedback__author__company gray__text">Майнкрафт company</span>
+                            </div>
+                            <div class="feedback__author__avatar">
+                                <img src="/static/images/man__1.png" alt="Author image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback__card">
+                        <span class="feedback__title">
+                            <span class="gray__text">Хочу выразить</span> благодарность
+                            <span class="gray__text"> команде за их терпение</span> и поддержку.
+                            <span class="gray__text"> Они помогли мне найти</span> идеальный офис
+                            <span class="gray__text"> для моего бизнеса.</span> Рекомендую!
+                        </span>
+                        <div class="feedback__author">
+                            <div class="feedback__author__personal">
+                                <span class="feedback__author__name">Игорь Пескарёв</span>
+                                <span class="feedback__author__company gray__text">Майнкрафт company</span>
+                            </div>
+                            <div class="feedback__author__avatar">
+                                <img src="/static/images/man__1.png" alt="Author image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feedback__cards__wrapper to__right">
+                    <div class="feedback__card">
+                        <span class="feedback__title">
+                            <span class="gray__text">Хочу выразить</span> благодарность
+                            <span class="gray__text"> команде за их терпение</span> и поддержку.
+                            <span class="gray__text"> Они помогли мне найти</span> идеальный офис
+                            <span class="gray__text"> для моего бизнеса.</span> Рекомендую!
+                        </span>
+                        <div class="feedback__author">
+                            <div class="feedback__author__personal">
+                                <span class="feedback__author__name">Игорь Пескарёв</span>
+                                <span class="feedback__author__company gray__text">Майнкрафт company</span>
+                            </div>
+                            <div class="feedback__author__avatar">
+                                <img src="/static/images/man__1.png" alt="Author image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback__card">
+                        <span class="feedback__title">
+                            <span class="gray__text">Хочу выразить</span> благодарность
+                            <span class="gray__text"> команде за их терпение</span> и поддержку.
+                            <span class="gray__text"> Они помогли мне найти</span> идеальный офис
+                            <span class="gray__text"> для моего бизнеса.</span> Рекомендую!
+                        </span>
+                        <div class="feedback__author">
+                            <div class="feedback__author__personal">
+                                <span class="feedback__author__name">Игорь Пескарёв</span>
+                                <span class="feedback__author__company gray__text">Майнкрафт company</span>
+                            </div>
+                            <div class="feedback__author__avatar">
+                                <img src="/static/images/man__1.png" alt="Author image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback__card">
+                        <span class="feedback__title">
+                            <span class="gray__text">Хочу выразить</span> благодарность
+                            <span class="gray__text"> команде за их терпение</span> и поддержку.
+                            <span class="gray__text"> Они помогли мне найти</span> идеальный офис
+                            <span class="gray__text"> для моего бизнеса.</span> Рекомендую!
+                        </span>
+                        <div class="feedback__author">
+                            <div class="feedback__author__personal">
+                                <span class="feedback__author__name">Игорь Пескарёв</span>
+                                <span class="feedback__author__company gray__text">Майнкрафт company</span>
+                            </div>
+                            <div class="feedback__author__avatar">
+                                <img src="/static/images/man__1.png" alt="Author image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team__section" class="team__section">
+            <div class="section__text__content">
+                <span class="section__title">Наша команда</span>
+                <span class="section__description">
+                    <span class="gray__text">Мы предлагаем</span> полный спектр услуг
+                    <span class="gray__text"> по продаже жилой и коммерческой недвижимости: </span>
+                    оценка, маркетинг, показы и юридическая поддержка. <span class="gray__text"> Наша цель — сделать
+                        процесс
+                        продажи</span> простым и удобным <span class="gray__text"> для клиентов.</span>
+                </span>
+            </div>
+
+            <div class="team__cards__container">
+                <a href="#" class="team__card" id="team__card__1">
+                    <img src="/static/images/woman_1.png" alt="Team person" />
+                    <div class="team__card__timestamp__container">
+                        <span class="team__card__timestamp">10:00 - 20:00</span>
+                    </div>
+
+                    <div class="team__card__about__person">
+                        <span class="person__name">Anna Nikishova</span>
+                        <span class="person__rule">Брокер по элитной недвижимости</span>
+                    </div>
+                </a>
+
+                <a href="#" class="team__card" id="team__card__2">
+                    <img src="/static/images/woman_2.png" alt="Team person" />
+                    <div class="team__card__timestamp__container">
+                        <span class="team__card__timestamp">10:00 - 20:00</span>
+                    </div>
+
+                    <div class="team__card__about__person">
+                        <span class="person__name">Anna Nikishova</span>
+                        <span class="person__rule">Брокер по элитной недвижимости</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="examples__catalog__section" class="examples__catalog__section">
+            <div class="section__text__content">
+                <span class="section__title">Каталог <span>недвижимости</span></span>
+                <span class="section__description">
+                    <span class="gray__text">У нас есть </span>
+                    каталог <span class="gray__text"> к каждому объявлению на платформе. Вы можете скачать </span>
+                    pdf файл, <span class="gray__text"> выбрав интересующий вас</span> объект
+                </span>
+            </div>
+
+            <div class="swiper__container">
+                <swiper-container class="swiper__wrapper" id="swiper-wrapper" space-between="24px"
+                    slides-per-view="auto">
+                    <swiper-slide class="example__card">
+                        <img class="example__image" src="/static/images/interior__1.png" alt="Example 1">
+                        <a href="/catalogPage.html" class="aqua__fade__btn blue__btn dekstop anim__btn">
+                            <span class="btn__text">
+                                Открыть каталог
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <div class="btn__link__svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide class="example__card">
+                        <img class="example__image" src="/static/images/interior__1.png" alt="Example 2">
+                        <a href="/catalogPage.html" class="aqua__fade__btn blue__btn dekstop anim__btn">
+                            <span class="btn__text">
+                                Открыть каталог
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <div class="btn__link__svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide class="example__card">
+                        <img class="example__image" src="/static/images/interior__1.png" alt="Example 3">
+                        <a href="/catalogPage.html" class="aqua__fade__btn blue__btn dekstop anim__btn">
+                            <span class="btn__text">
+                                Открыть каталог
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <div class="btn__link__svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide class="example__card">
+                        <img class="example__image" src="/static/images/interior__1.png" alt="Example 4">
+                        <a href="/catalogPage.html" class="aqua__fade__btn blue__btn dekstop anim__btn">
+                            <span class="btn__text">
+                                Открыть каталог
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <div class="btn__link__svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide class="example__card">
+                        <img class="example__image" src="/static/images/interior__1.png" alt="Example 5">
+                        <a href="/catalogPage.html" class="aqua__fade__btn blue__btn dekstop anim__btn">
+                            <span class="btn__text">
+                                Открыть каталог
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <div class="btn__link__svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide class="example__card">
+                        <img class="example__image" src="/static/images/interior__1.png" alt="Example 6">
+                        <a href="/catalogPage.html" class="aqua__fade__btn blue__btn dekstop anim__btn">
+                            <span class="btn__text">
+                                Открыть каталог
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <div class="btn__link__svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"
+                                    fill="none">
+                                    <path d="M1.5 1.75H11.5M11.5 1.75V11.75M11.5 1.75L1.5 11.75" stroke="#0062F0"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </swiper-slide>
+                </swiper-container>
+
+                <a href="/catalogPage.html" class="blue__btn__container">
+                    <button type="button" class="opacity__btn anim__btn blue__btn adaptive">Открыть каталог</button>
+                </a>
+            </div>
+        </section>
+
+        <section id="contacts__section" class="contacts__section">
+            <div class="section__title">Контакты</div>
+            <div class="contacts__container">
+                <div class="yandex__map__container">
+                    <iframe src="https://yandex.ru/map-widget/v1/-/CDh8ZHk1" width="600" height="400"></iframe>
+                </div>
+
+                <div class="contacts__block">
+                    <span class="block__title">NASgroup</span>
+
+                    <div class="contacts__block__content">
+                        <div class="contacts__form">
+                            <div class="contact__input__container phone__input__container">
+                                <span class="contact__input__title phone__input__title">Телефон</span>
+                                <span class="contact__input phone__input">+7(966)196-16-61</span>
+                            </div>
+
+                            <div class="contact__input__container email__input__container">
+                                <span class="contact__input__title email__input__title">Email</span>
+                                <span class="contact__input email__input">sitystories@mail.ru</span>
+                            </div>
+
+                            <div class="contact__input__container geo__input__container">
+                                <span class="contact__input__title geo__input__title">Адрес</span>
+                                <span class="contact__input geo__input">Москва, Пресненская набережная, 8с1</span>
+                            </div>
+                        </div>
+
+                        <div class="network__container dekstop">
+                            <a class="network__card" href="https://wa.me/79661961661" target="_blank">
+                                <img src="/static/icons/whatsapp-blue.svg" alt="Whatsapp">
+                                <span>Whatsapp</span>
+                            </a>
+
+
+                            <a class="network__card" href="https://www.instagram.com/broker_int.realty" target="_blank">
+                                <img src="/static/icons/instagram-blue.svg" alt="Instagram">
+                                <span>Instagram</span>
+                            </a>
+
+
+                            <a class="network__card" href="https://t.me/sitystoriess" target="_blank">
+                                <img src="/static/icons/telegram-blue.svg" alt="Telegram">
+                                <span>Telegram</span>
+                            </a>
+
+                        </div>
+
+                        <div class="network__container">
+                            <a class="network__card adaptive" href="https://wa.me/79661961661" target="_blank">
+                                <img src="/static/icons/whatsapp-blue.svg" alt="Whatsapp">
+                            </a>
+
+
+                            <a class="network__card adaptive" href="https://www.instagram.com/broker_int.realty"
+                                target="_blank">
+                                <img src="/static/icons/instagram-blue.svg" alt="Instagram">
+                            </a>
+
+
+                            <a class="network__card adaptive" href="https://t.me/sitystoriess" target="_blank">
+                                <img src="/static/icons/telegram-blue.svg" alt="Telegram">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="send__request__btn__container dekstop">
+                <button class="blue__btn send__request__btn anim__btn" id="sendRequestBtn">
+                    <span class="btn__text">Оставить заявку</span>
+                </button>
+            </div>
+        </section>
+
+        <footer id="footer" class="footer">
+            <div class="footer__text__logo">
+                <span class="footer__text__firstline">
+                    <svg class="footer__firstline__svg" xmlns="http://www.w3.org/2000/svg" width="680" height="272"
+                        viewBox="0 0 680 272" fill="none">
+                        <path
+                            d="M151.469 5.23077H203.081V266.769H163.811L51.6116 106.857V266.769H0V5.23077H39.2697L151.469 164.769V5.23077Z"
+                            fill="#0062F0" />
+                        <path
+                            d="M419.943 266.769L404.236 219.692H299.89L284.182 266.769H228.457L320.086 5.23077H384.04L476.043 266.769H419.943ZM316.346 171.495H388.154L352.25 64.6374L316.346 171.495Z"
+                            fill="#0062F0" />
+                        <path
+                            d="M585.005 272C559.074 272 537.258 266.271 519.555 254.813C501.853 243.106 489.386 227.289 482.155 207.363L526.287 181.582C536.51 208.234 556.581 221.56 586.501 221.56C600.962 221.56 611.559 218.945 618.29 213.714C625.022 208.484 628.388 201.883 628.388 193.912C628.388 184.696 624.274 177.597 616.047 172.615C607.819 167.385 593.108 161.78 571.915 155.802C560.196 152.315 550.223 148.828 541.995 145.341C534.016 141.853 525.913 137.245 517.685 131.516C509.707 125.538 503.598 118.066 499.359 109.099C495.121 100.132 493.001 89.6703 493.001 77.7143C493.001 54.0513 501.354 35.2454 518.059 21.2967C535.014 7.09891 555.334 0 579.021 0C600.214 0 618.789 5.23077 634.746 15.6923C650.953 25.9048 663.544 40.2271 672.52 58.6593L629.136 83.6923C618.664 61.2747 601.959 50.0659 579.021 50.0659C568.299 50.0659 559.822 52.5568 553.589 57.5385C547.605 62.2711 544.613 68.4982 544.613 76.2198C544.613 84.4396 547.979 91.1648 554.711 96.3956C561.692 101.377 574.907 106.857 594.355 112.835C602.333 115.326 608.317 117.319 612.307 118.813C616.545 120.059 622.155 122.176 629.136 125.165C636.367 127.905 641.852 130.52 645.592 133.011C649.582 135.502 654.07 138.864 659.056 143.099C664.043 147.333 667.783 151.692 670.276 156.176C673.019 160.659 675.263 166.139 677.008 172.615C679.003 178.842 680 185.692 680 193.165C680 217.326 671.149 236.505 653.446 250.703C635.993 264.901 613.179 272 585.005 272Z"
+                            fill="#0062F0" />
+                    </svg>
+
+                    <div class="footer__firstline__videoframe">
+                        <video src="/video/city.mp4" autoplay loop muted></video>
+                    </div>
+                </span>
+
+                <span class="footer__text__secondline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1252" height="341" viewBox="0 0 1252 341"
+                        fill="none">
+                        <path
+                            d="M200.585 7.03444H199.585V8.03444V39.3009C180.528 13.7639 153.785 1 119.473 1C86.2626 1 58.1886 12.8672 35.3123 36.5816C12.4406 59.9816 1 88.3941 1 121.76C1 155.127 12.4411 183.693 35.31 207.401L35.3146 207.406C58.1924 230.811 86.2659 242.521 119.473 242.521C153.785 242.521 180.528 229.757 199.585 204.22V229.452C199.585 249.346 193.447 264.678 181.271 275.59L181.261 275.599L181.251 275.608C169.368 286.834 152.706 292.51 131.127 292.51C98.1404 292.51 75.8634 280.719 63.9584 257.314L63.48 256.373L62.5665 256.902L19.2136 281.968L18.3784 282.451L18.831 283.302C38.9427 321.165 76.1772 340 130.194 340C163.65 340 192.159 330.499 215.665 311.462C239.25 292.36 250.998 264.972 250.998 229.452V8.03444V7.03444H249.998H200.585ZM178.443 173.033L178.436 173.041C164.652 186.766 147.354 193.638 126.465 193.638C105.578 193.638 88.1208 186.767 74.0245 173.037C60.241 159.31 53.3454 142.241 53.3454 121.76C53.3454 101.28 60.2408 84.211 74.0241 70.484C88.1205 56.7542 105.578 49.8829 126.465 49.8829C147.354 49.8829 164.652 56.7551 178.436 70.48L178.443 70.4877C192.537 84.217 199.585 101.285 199.585 121.76C199.585 142.236 192.537 159.304 178.443 173.033ZM386.013 13.7921C375.006 20.4112 366.346 30.0175 360.025 42.5693V8.03444V7.03444H359.025H308.679H307.679V8.03444V240.128V241.128H308.679H359.025H360.025V240.128V123.153C360.025 99.5224 367.104 82.8679 381.049 72.906L381.055 72.9019L381.061 72.8977C395.15 62.5281 411.694 57.9404 430.749 59.1646L431.813 59.233V58.1667V3.85675V2.85675H430.813C413.119 2.85675 398.169 6.48236 386.013 13.7921ZM892.786 7.03444H891.786V8.03444V132.437C891.786 154.879 886.383 171.445 875.761 182.329C865.101 192.941 851.075 198.28 833.584 198.28C817.624 198.28 805.159 193.702 796.064 184.645C786.983 175.603 782.374 162.585 782.374 145.434V8.03444V7.03444H781.374H731.028H730.028V8.03444V150.54C730.028 180.438 738.322 204.076 755.016 221.328C771.701 238.568 793.572 247.163 820.531 247.163C852.457 247.163 876.27 236.044 891.786 213.723V240.128V241.128H892.786H943.131H944.131V240.128V8.03444V7.03444H943.131H892.786ZM1052.35 333.966H1053.35V332.966V210.168C1072.42 234.843 1099.32 247.163 1133.93 247.163C1166.21 247.163 1193.82 235.288 1216.69 211.579C1239.57 187.863 1251 158.675 1251 124.081C1251 89.7949 1239.57 60.7637 1216.69 37.0504C1193.82 13.0317 1166.22 1 1133.93 1C1099.32 1 1072.42 13.4669 1053.35 38.4301V8.03444V7.03444H1052.35H1002H1001V8.03444V332.966V333.966H1002H1052.35ZM1177.96 71.8648L1177.97 71.8725C1191.75 85.5942 1198.65 102.971 1198.65 124.081C1198.65 145.192 1191.75 162.727 1177.96 176.761C1164.18 190.481 1146.89 197.351 1126 197.351C1105.12 197.351 1087.82 190.481 1074.04 176.761C1060.25 162.727 1053.35 145.192 1053.35 124.081C1053.35 102.971 1060.25 85.5942 1074.03 71.8726L1074.04 71.8647C1087.82 57.8332 1105.12 50.8113 1126 50.8113C1146.88 50.8113 1164.18 57.8332 1177.96 71.8648ZM479.227 211.598C503.347 235.304 532.658 247.163 567.1 247.163C601.849 247.163 631.162 235.306 654.975 211.596C679.099 187.884 691.166 158.691 691.166 124.081C691.166 89.4713 679.099 60.2785 654.975 36.5671C631.162 12.8562 601.849 1 567.1 1C532.658 1 503.347 12.8586 479.227 36.565C455.101 60.2768 443.033 89.4703 443.033 124.081C443.033 158.692 455.101 187.886 479.227 211.598ZM567.1 196.423C546.842 196.423 529.851 189.557 516.062 175.826C502.279 162.101 495.379 144.878 495.379 124.081C495.379 103.285 502.279 86.0613 516.062 72.3367C529.851 58.6057 546.842 51.7397 567.1 51.7397C587.358 51.7397 604.349 58.6057 618.138 72.3367C631.921 86.0613 638.821 103.285 638.821 124.081C638.821 144.878 631.921 162.101 618.138 175.826C604.349 189.557 587.358 196.423 567.1 196.423Z"
+                            stroke="#0062F0" stroke-width="2" />
+                    </svg>
+                </span>
+            </div>
+
+            <nav class="footer__navbar">
+                <span class="footer__copyright">©️2024</span>
+                <div class="network__container" id="network__container">
+                    <a class="network__card" href="https://wa.me/79661961661" target="_blank">
+                        <img src="/static/icons/whatsapp.svg" alt="Whatsapp" />
+                        <span class="network__title">Whatsapp</span>
+                    </a>
+                    <a class="network__card" href="https://www.instagram.com/broker_int.realty" target="_blank">
+                        <img src="/static/icons/instagram.svg" alt="Instagram" />
+                        <span class="network__title">Instagram</span>
+                    </a>
+                    <a class="network__card" href="https://t.me/sitystoriess" target="_blank">
+                        <img src="/static/icons/telegram.svg" alt="Telegram" />
+                        <span class="network__title">Telegram</span>
+                    </a>
+
+                </div>
+            </nav>
+        </footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script type="module" src="/pages/homePage/UI/popup/requestPopup.js"></script>
+    <script type="module" src="/JS/UI/header/header.js"></script>
+    <script type="module" src="/pages/homePage/animations/scrollCardsHomePage.js"></script>
+    <script type="module" src="/pages/homePage/UI/sections/feedbackSection.js"></script>
+    <script type="module" src="/JS/UI/footer/footer.js"></script>
+    <script type="module" src="/pages/homePage/animations/animationsHomePage.js"></script>
+    <script type="module" src="/JS/animations/aquaFadeBtnAnimation.js"></script>
+</body>
+
+</html>
